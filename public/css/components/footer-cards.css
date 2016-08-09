@@ -1,0 +1,89 @@
+/**
+ *footer-cards 组件
+ *结构：
+ *      footer.footer-cards
+ *          > a
+ *              > i
+ */
+footer {
+    position: relative;
+}
+
+/*
+ ① 父容器height: auto，无论height:100%或者height:inherit表现都是auto.
+ ② 父容器定高height: 100px，无论height:100%或者height:inherit表现都是100px高.
+*/
+
+/*基础样式*/
+.footer-cards {
+    text-align: center;
+    padding-bottom: 10px;
+    height: 100%;
+    width: auto;
+}
+@media (max-width: 48em) {
+    .footer-cards {
+        text-align: center;
+        padding-top: 20px;
+        padding-bottom: 10px;
+        height: 100%;
+        width: auto;
+    }
+}
+.footer-cards a {
+    display: inline-block;
+    margin-right: 30px;
+    background: #808080;
+    width: 150px;
+    height: 30px;
+    border-radius: 3px;
+    line-height: 2;
+    color: #fdfffb;
+    font-size: 15px;
+
+}
+
+/*颜色样式*/
+.footer-cards.green a {
+    background: #93bc98;
+}
+/*for instance*/
+.footer-cards.red a {
+    background: #e53527;
+}
+
+@media (max-width: 48em) {
+    .footer-cards a {
+        display: block;
+        margin: 3px auto;
+        width: 150px;
+        height: 30px;
+        border-radius: 15px;
+        line-height: 2;
+        color: white;
+        font-size: 15px;
+
+    }
+}
+
+.footer-cards i {
+    margin: 0 4px;
+}
+
+@media (max-width: 768px) {
+    .footer-cards i {
+        margin: 0 4px;
+    }
+}
+
+
+/*尺寸样式*/
+
+
+/*并列元素样式*/
+
+
+/*嵌套子元素样式*/
+
+
+/*特殊样式*/

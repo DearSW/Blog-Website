@@ -1,0 +1,127 @@
+
+/*----------------------------------------------*/
+/**
+ *动画背景
+ *structure:
+ *      div.bg
+ *          > picture.bg-position
+ *          > div.bg-animations
+ *              > picture.bg-position.bg-animation.bg-z1
+ *              > picture.bg-position.bg-animation.bg-z2
+ *              > picture.bg-position.bg-animation.bg-z3
+ */
+
+
+
+.bg {
+    width: 100%;
+    height: 100%;
+}
+
+.bg-position {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /*解决背景高度到尽头的情况！*/
+    height: 110%;
+    z-index: 0;
+    background-repeat: no-repeat;
+    /*background-size: 46pc 46pc;*/
+    transition: opacity .4s ease-out;
+}
+
+.bg-paused .bg-position {
+    opacity: 0;
+}
+/**
+ * .bg-animations有两种状态
+ * 切换页面时，动画不可见
+ */
+.bg-animations {
+    transition: opacity .18s ease-in-out;
+}
+
+/**
+ * 动画开始
+ * .bg-animation有两种状态
+ * 切换页面时，动画停止
+ */
+.bg-animation {
+    animation-duration: 6s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-play-state: running;
+    animation-delay: 0s;
+    opacity: 1;
+}
+
+.bg-paused .bg-animation {
+    animation-name: none;
+    animation-play-state: paused;
+}
+
+/**
+ * 动画名
+ */
+.bg-z1 {
+    z-index: 3;
+    animation-name: animation-one;
+}
+.bg-z2 {
+    z-index: 2;
+    animation-name: animation-two;
+}
+
+.bg-z3 {
+    z-index: 1;
+    animation-name: animation-three;
+}
+
+/**
+ * 动画规则
+ */
+@keyframes animation-one {
+    0% {
+        opacity: 1;
+    }
+
+    33.33%,66.67% {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes animation-two {
+    0% {
+        opacity: 0;
+    }
+
+    33.33% {
+        opacity: 1;
+    }
+
+    66.67%,to {
+        opacity: 0;
+    }
+}
+
+@keyframes animation-three {
+    0%,33.33% {
+        opacity: 0;
+    }
+
+    66.67% {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+/*------------------------------------------------------*/

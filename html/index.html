@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <meta http-equiv="x-ua-compatible" content="IE=edge,chrome=1">
+    <meta name="keywords" content="DearSW">
+    <meta name="author" content="DearSW">
+    <meta name="description" content="DearSW">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <link rel="short icon" type="image/icon" href="../public/images/icon/icon.jpg">
+
+    <link rel="stylesheet" href="../public/css/pure-release-0.5.0/base-min.css">
+    <link rel="stylesheet" href="../public/css/pure-release-0.5.0/grids-min.css">
+    <link rel="stylesheet" href="../public/css/pure-release-0.5.0/grids-responsive-min.css">
+
+    <link rel="stylesheet" href="../public/css/normalize.css">
+    <link rel="stylesheet" href="../public/css/normalizeForDearSW.css">
+
+    <link rel="stylesheet" href="../public/css/font-awesome-4.5.0/css/font-awesome.css">
+
+    <link rel="stylesheet" href="../public/css/components/background-animation.css">
+    <link rel="stylesheet" href="../public/css/components/footer-cards.css">
+    <link rel="stylesheet" href="../public/css/index.css">
+    <link rel="stylesheet" href="../public/css/slide.css">
+    <!--[if ite IE 8] >
+    <link rel="stylesheet" href="../public/css/pure-release-0.5.0/grids-responsive-old-ie-min.css">
+    <![endif]-->
+    <!--<script src="javascripts/modernizr-custom.javascripts"></script>-->
+</head>
+<!--no-scroll 切换-->
+<body id="bodyToggle" class="no-scroll">
+
+    <!------------------------------------------------------------------>
+    <!--背景制作-->
+    <!--bg-paused 切换-->
+    <div id="bgToggle" class="bg">
+        <!--1-->
+        <picture class="bg-position" style="background-image: url(../public/images/odient/odient-1-desktop.jpg);">
+            <source srcset="./images/odient/odient-1-desktop.jpg 1x, ./images/odient/odient-1-desktop-2x.jpg 2x" media="(min-width: 1024px)">
+            <source srcset="./images/odient/odient-1-tablet.jpg 1x, ./images/odient/odient-1-tablet-2x.jpg 2x" media="(min-width: 768px)">
+            <source srcset="./images/odient/odient-1-mobile.jpg 1x, ./images/odient/odient-1-mobile-2x.jpg 2x">
+        </picture>
+        <!--2-->
+        <div class="bg-animations">
+            <picture class="bg-position bg-animation bg-z1"  style="background-image: url(../public/images/odient/odient-1-desktop.jpg);">
+                <source srcset="./images/odient/odient-1-desktop.jpg 1x, ./images/odient/odient-1-desktop-2x.jpg 2x" media="(min-width: 1024px)">
+                <source srcset="./images/odient/odient-1-tablet.jpg 1x, ./images/odient/odient-1-tablet-2x.jpg 2x" media="(min-width: 768px)">
+                <source srcset="./images/odient/odient-1-mobile.jpg 1x, ./images/odient/odient-1-mobile-2x.jpg 2x">
+            </picture>
+            <picture class="bg-position bg-animation bg-z2"  style="background-image: url(../public/images/odient/odient-2-desktop.jpg);">
+                <source srcset="./images/odient/odient-2-desktop.jpg 1x, ./images/odient/odient-2-desktop-2x.jpg 2x" media="(min-width: 1024px)">
+                <source srcset="./images/odient/odient-2-tablet.jpg 1x, ./images/odient/2-tablet-2x.jpg 2x" media="(min-width: 768px)">
+                <source srcset="./images/odient/odient-2-mobile.jpg 1x, ./images/odient/odient-2-mobile-2x.jpg 2x">
+            </picture>
+            <picture class="bg-position bg-animation bg-z3" style="background-image: url(../public/images/odient/odient-3-desktop.jpg);">
+                <source srcset="./images/odient/odient-3-desktop.jpg 1x, ./images/odient/odient-3-desktop-2x.jpg 2x" media="(min-width: 1024px)">
+                <source srcset="./images/odient/odient-3-tablet.jpg 1x, ./images/odient/odient-3-tablet-2x.jpg 2x" media="(min-width: 768px)">
+                <source srcset="./images/odient/odient-3-mobile.jpg 1x, ./images/odient/odient-3-mobile-2x.jpg 2x">
+            </picture>
+        </div>
+    </div>
+
+
+    <!------------------------------------------------------------------>
+    <header id="header">
+
+        <div class="pure-g">
+            <div class="pure-u-1">
+                <div class="box-inner">
+                <!--图标-->
+                    <a href="#"><i class="fa fa-subway fa-2x"></i></a>
+                <!--按钮 toggle 切换 btn-close添加在这里-->
+                    <a href="#" id="btnToggle" class="btn btn-close">
+                        <div class="btn-inner">
+                            <div class="btn-lines"></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </header>
+
+    <!------------------------------------------------------------------->
+    <div id="nav" class="nav">
+
+        <!--切换处 nav-fade-in，特殊导航面-->
+        <div id="navToggle" class="nav-fade nav-fade-in">
+            <div class="box-outer">
+                <div class="nav-items pure-g">
+                    <div class="pure-u-1 pure-u-md-1-5"><a href="/"><span>主页</span></a></div>
+                    <div class="pure-u-1 pure-u-md-1-5"><a href="/aritcles"><span>文章</span></a></div>
+                    <div class="pure-u-1 pure-u-md-1-5"><a href="/blogs"><span>资源</span></a></div>
+                    <div class="pure-u-1 pure-u-md-1-5"><a href="/study"><span>Github</span></a></div>
+                    <div class="pure-u-1 pure-u-md-1-5"><a href="/about"><span>About</span></a></div>
+                </div>
+            </div>
+
+            <!--导航footer-->
+            <div class="box-outer">
+                <div class="pure-g">
+                    <div class="pure-u-1 pure-u-md-1-3">
+                        <div class="mp">
+                            <span>Odopod SF</span>
+                            <br />
+                            <span>391 Grove Street, San Francisco, CA </span>
+                            <br />
+                            <span>94102</span>
+                            <br />
+                            <span>415.436.9980</span>
+                            <br />
+                            <a href="#">Map It↗</a>
+                        </div>
+
+                    </div>
+                    <div class="pure-u-1 pure-u-md-1-3">
+                        <div class="mp">
+                            <span>Odopod NY</span>
+                            <br />
+                            <span>1675 Broadway, New York, NY 10019</span>
+                            <br />
+                            <span>415.436.9980</span>
+                            <br />
+                            <a href="#">Map It↗</a>
+                        </div>
+
+                    </div>
+                    <div class="pure-u-1 pure-u-md-1-3">
+                        <div class="mp">
+                            <span>Get in Touch</span>
+                            <br />
+                            <span>Sign up for our newsletter +</span>
+                            <br />
+                            <a href="#">hello@odopod.com↗</a>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!--------------------------------------------------------------------------->
+    <div class="clearfix"></div>
+    <!--主体-->
+    <!--这里有一个切换，nav-fade-in-->
+    <div id="contentToggle" class="pure-g hide">
+
+        <!--slide-->
+        <div class="pure-u-1">
+            <div class="inner">
+                <div id="slide">
+
+                    <a href="#">
+                        <div class="moni">
+                        </div>
+                    </a>
+
+                    <div class="source">
+                        <a href=""><img class="pure-img" src="../public/images/slide/1.jpg"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--article-->
+        <div class="pure-u-1">
+            <div class="article inner">
+                    <section>
+
+                        <!--title-->
+                        <div class="title">
+                            <div class="intro-inner">
+                                <h1>DearSW</h1>
+                                <small>2017.0.0</small> |
+                                <small>第一篇</small>
+                            </div>
+                        </div>
+
+                        <!--content-->
+                        <div class="text">
+                            <div class="text-inner">
+                                <h1>Hello,my dear friends.</h1>
+                            </div>
+                        </div>
+                        <div>
+                            <span class="prepage"><a title="上一页" href="?p=<%= page-1 %>">上一页</a></span>
+                            <span class="nextpage"><a title="下一页" href="?p=<%= page+1 %>">下一页</a></span>
+                        </div>
+                    </section>
+            </div>
+        </div>
+
+        <!--footer-->
+        <div class="pure-u-1">
+            <footer class="footer-cards green inner footerforindex">
+                <div class="pure-g">
+                    <div class="pure-u-1 pure-u-md-1-3">
+                        <!--1 card-->
+                        <a>
+                            Live preview
+                            <i class="fa fa-th"></i>
+                        </a>
+                    </div>
+                    <div class="pure-u-1 pure-u-md-1-3">
+                        <!--2 card-->
+                        <a>
+                            Screenshots
+                            <i class="fa fa-photo"></i>
+                        </a>
+                    </div>
+                    <div class="pure-u-1 pure-u-md-1-3">
+                        <!--3 card-->
+                        <a>
+                            Share
+                            <i class="fa fa-google-plus"></i>
+                            <i class="fa fa-facebook-f"></i>
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+            </footer>
+        </div>
+
+        <div class="pure-u-1">
+            <div class="inner about">
+                <h1>关于我的博客</h1>
+                <p>
+                    基于NodeJS + 阿里云服务器。
+                </p>
+                <p>
+                    目前用到了以下云服务，都是在一定程度下免费的。
+                </p>
+                <ul>
+                    <li>Github pages - 静态 HTML、JS 文件存储。</li>
+                    <li>LeanCloud - 供应博客内容。</li>
+                    <li>Flickr/七牛 - 博客图片之类的文件存储。</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="pure-u-1">
+            <div class="inner">
+
+            </div>
+        </div>
+    </div>
+
+
+    <!--------------------------------------------------------------------------->
+    <script src="../public/javascripts/jquery-1.12.4.js"></script>
+    <script>
+
+        //toggle() 方法切换元素的可见状态。
+        //如果被选元素可见，则隐藏这些元素，如果被选元素隐藏，则显示这些元素。
+        //toggleClass() 对设置或移除被选元素的一个或多个类进行切换。
+        //该方法检查每个元素中指定的类。如果不存在则添加类，如果已设置则删除之。这就是所谓的切换效果。
+        $(function() {
+            $("#btnToggle").click(function() {
+                $(this).toggleClass("btn-close");
+                $("#bodyToggle").toggleClass("no-scroll");
+                $("#nav").toggleClass("hide");
+                $("#navToggle").toggleClass("nav-fade-in");
+                $("#contentToggle").toggleClass("hide");
+                $("#bgToggle").toggleClass("bg-paused");
+            });
+        });
+    </script>
+
+    <script>
+        $(function () {
+            var settings = {
+                nowimg: 1,
+                sumimg: 5
+            };
+
+            for(var i = 0; i < 40; i++) {
+                $("#slide .moni").append("<p></p>");
+            }
+            var timeout;
+
+            $(".moni p").each(function () {
+
+                var a = $(this).index() % 8 * 100;
+                var b = parseInt($(this).index() / 8 )* 89;
+                $(this).css({
+                    "left": a,
+                    "top": b,
+                    "background-position": (-a) + "px " + (-b) + "px",
+                    "position": "absolute"
+                });
+            });
+
+            function move(){
+
+                //加过渡：
+                $(".moni p").css("transition","all 2.5s ease 0s");
+                //加过渡的特效
+                $(".moni p").each(function () {
+                    var random = parseInt(Math.random() * 20 + 1);
+                    $(this).css("transform", "rotateX(" + 30*random + "deg)" + "rotateY(" + 10*random + "deg)" + "translateZ(" + 40*random + "px)");
+                });
+                $(".moni").addClass("fei");
+                $(".momi p").addClass("pure-img");
+                //在过渡的同时就换上了下一个背景，衔接更自然；
+//              //src="../public/images/slide/1.jpg"
+                $(".moni p").css("background-image","url(../public/images/slide/" + settings.nowimg + ".jpg)");
+                $(".source img").attr("src","../public/images/slide/" + settings.nowimg + ".jpg");
+
+                setTimeout(function(){
+                    //去掉过渡
+                    $(".moni p").css("transition","none");
+                    //去掉特效
+                    $(".moni").removeClass("fei");
+                    $(".moni p").each(function () {
+                        $(this).css("transform", "none");
+                    });
+                },2000);
+            }
+
+            function advance() {
+                clearTimeout(timeout);
+                if(settings.nowimg < settings.sumimg) {
+                    move();
+                    settings.nowimg ++;
+                    if(settings.nowimg == settings.sumimg) {
+                        settings.nowimg = 1;
+                    }
+                    timeout = setTimeout(advance,5000);
+                }
+
+            }
+            advance();
+
+        })
+    </script>
+</body>
+</html>

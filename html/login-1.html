@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge,chrome=1">
+    <title>Login</title>
+    <meta name="keywords" content="DearSW">
+    <meta name="author" content="DearSW">
+    <meta name="description" content="DearSW">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <link rel="short icon" type="image/icon" href="../public/images/icon/icon.jpg">
+
+    <link rel="stylesheet" href="../public/css/pure-release-0.5.0/base-min.css">
+    <link rel="stylesheet" href="../public/css/pure-release-0.5.0/grids-min.css">
+    <link rel="stylesheet" href="../public/css/pure-release-0.5.0/grids-responsive-min.css">
+
+    <link rel="stylesheet" href="../public/css/normalize.css">
+    <link rel="stylesheet" href="../public/css/normalizeForDearSW.css">
+
+    <link rel="stylesheet" href="../public/css/font-awesome-4.5.0/css/font-awesome.css">
+    <!--[if ite IE 8] >
+    <link rel="stylesheet" href="../public/css/pure-release-0.5.0/grids-responsive-old-ie-min.css">
+    <![endif]-->
+
+    <link rel="stylesheet" href="../public/css/components/footer-cards.css">
+    <link rel="stylesheet" href="../public/css/login-1.css">
+    <!--<script src="../public/javascripts/modernizr-custom.js"></script>-->
+</head>
+<body>
+    <!----------------------------------------------------->
+    <header id="header" class="pure-g">
+        <div class="pure-u-1">
+            <div class="progress-line"></div>
+        </div>
+    </header>
+
+    <section id="content">
+
+        <div class="container">
+            <!--表单-->
+            <div class="form-login-1">
+
+                <!-----------------------表单头部------------------------------->
+
+                <div class="title">
+                    <!--logo-->
+                    <h1 class="logo hide-text">DearSW</h1>
+                    <!--子标题-->
+                    <h2 class="subtitle">人生不止有代码、 还有诗和远方</h2>
+                </div>
+
+                <!-----------------------表单主体----------------------------------->
+
+                <div class="body clearfix">
+                    <!----------------注册与登录的导航------------------------>
+                    <div class="tab-nav">
+                        <div class="tab-nav-center">
+                            <a  href="#">注册</a>
+                            <a  href="#" class="active">登录</a>
+                        </div>
+
+                        <span class="nav-bottom"></span>
+                    </div>
+
+                    <!--------------------表单登录-------------------------->
+                    <div class="signInform" >
+                        <!--表单-->
+                        <form action="#" >
+                            <!--防xsrf攻击，利用hidden来隐藏一些数据，但是又可以发送到服务器-->
+                            <input type="hidden" name="_xsrf" value="d3e0e77c8c03f69ef85719437b8cc176">
+                            <div class="group-inputs">
+                                <input type="text" placeholder="手机号或者邮箱" required>
+                                <input type="password" placeholder="密码" required>
+                            </div>
+                            <!--登录按钮-->
+                            <div class="btn">
+                                <button type="submit">
+                                    登录
+                                    <i id="loading" class="fa fa-cog fa-spin fa-fw" style="display: none;"></i>
+                                    <span class="hide-text">loading...</span>
+                                </button>
+                            </div>
+                            <!--帮助-->
+                            <div class="help">
+                                <label class="remember-me">
+                                    <input type="checkbox" name="remember_me" checked="" value="true"> 记住我
+                                </label>
+                                <a class="unable-login" href="#">无法登录?</a>
+                            </div>
+                            <!--社交账号-->
+                            <div class="weibo-signup-wrapper clearfix">
+                                <span class="name js-toggle-sns-buttons">社交帐号登录</span>
+
+                                <div class="sns-buttons" style="visibility: hidden;">
+                                    <a title="微信登录" class="js-bindwechat" href="#"><i class="fa fa-weixin"></i></a>
+                                    <a title="微博登录" class="js-bindweibo" href="#"><i class="fa fa-weibo"></i></a>
+                                    <a title="QQ 登录" class="js-bindqq" href="#"><i class="fa fa-qq"></i></a>
+                                </div>
+                            </div>
+                        </form>
+                        <!--二维码-->
+                        <div class="QRCode">
+                            <button class="QRCode-toggleButton">
+                                <span class="sprite-index-icon-qrcode"></span>
+                                <span class="QRCode-toggleButtonText ">下载 App</span>
+                            </button>
+                            <div class="QRCode-card" style="display: none;">
+                                <div class="QRCode-image"></div>
+                                <div class="sprite-index-icon-arrow"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!----------------------表单注册--------------------------->
+                    <div class="signUpform" style="display: none;">
+
+                        <!--表单-->
+                        <form action="/register">
+                            <div class="group-inputs">
+                                <input required type="text" name="fullname"  placeholder="姓名">
+                                <input required type="text" class="account" name="phone_num"  placeholder="手机号（仅支持中国大陆）">
+                                <input required type="password" name="password"  placeholder="密码（不少于 6 位）">
+                            </div>
+                            <div class="btn">
+                                <button type="submit">注册</button>
+                            </div>
+                        </form>
+
+                        <!--二维码-->
+                        <div class="QRCode">
+                            <button class="QRCode-toggleButton">
+                                <span class="sprite-index-icon-qrcode"></span>
+                                <span class="QRCode-toggleButtonText ">下载 App</span>
+                            </button>
+                            <div class="QRCode-card" style="display: none;">
+                                <div class="QRCode-image"></div>
+                                <div class="sprite-index-icon-arrow"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="footer" class="footer-cards red">
+        <a href=""><i class="fa fa-envelope"></i></a>
+        <a href=""><i class="fa fa-github"></i></a>
+    </footer>
+
+    <script src="../public/javascripts/jquery-1.12.4.js"></script>
+    <script src="../public/javascripts/login-1.js"></script>
+    <script src="../public/javascripts/login1-ajax.js"></script>
+
+</body>
+</html>

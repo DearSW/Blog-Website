@@ -1,0 +1,124 @@
+/*
+*   customization for DearSW
+*/
+
+/**
+ * Remove the margin and padding for ul
+ */
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+/**
+ * I don't like the p having margin and padding
+ * Remove the margin and padding for p
+ */
+p {
+    margin: 0;
+    padding: 0;
+}
+
+
+/**
+ * In chrome, h1 - h6 have -webkit-margin-before and -webkit-margin-after
+ * remove them
+ */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    padding: 0;
+}
+
+/**
+ * Reset the a default style
+ */
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+/**
+ * Reset the li default style
+ */
+li {
+    list-style: none;
+}
+
+
+/**
+ * remove the border
+ */
+
+button,
+input {
+    border: 0;
+    outline: none;
+}
+
+
+/**
+ * 增加全局样式
+ */
+
+/**
+ * Set body
+ */
+body {
+    font-family: 'Helvetica Neue',Helvetica,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.428571429;
+    color: #333;
+    background-color: #fff;
+}
+/**
+ * Set clearfix
+ */
+.clearfix {
+    *zoom:1;
+}
+
+.clearfix:before,
+.clearfix:after {
+    display: table;
+    content: "";
+}
+.clearfix:after {
+    clear: both;
+}
+
+.invisible {
+    visibility: hidden;
+}
+.text-hide {
+    font: 0/0 a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+}
+
+.show {
+    display: block !important;
+}
+.hide {
+    display: none !important;
+}
+a:focus {
+    outline: none;
+}
+
+/*pure*/
+html,
+button,
+input,
+select,
+textarea,
+.pure-g [class *= "pure-u"] {
+    /* 字体栈写在这: */
+    font-family: 'Helvetica Neue',Helvetica,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',Arial,sans-serif;
+}

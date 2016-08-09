@@ -1,0 +1,49 @@
+
+body {
+
+}
+/**
+ * #box 组件
+ */
+
+#box {
+    position: relative;
+
+}
+
+#box-inner {
+    /*触发BFC，还TM必须是直接父元素*/
+    overflow: hidden;
+    text-align: center;
+    height: 500px;
+    width: 100%;
+    background-color: #F1F1F1;
+    background: url("../images/木纹背景/木纹背景-002.png");
+
+}
+
+#title {
+    position: absolute;
+    top: 0;
+    left: 15%;
+    display: inline-block;
+    height: 64px;
+    width: auto;
+    font-size: 75px;
+    font-weight: bolder;
+    color: white;
+
+}
+
+#box img {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    margin-left: -100px;
+    opacity: 0;
+    width: 200px;
+    height: 200px;
+    box-shadow: 0 0 5px 1px black;
+}
+
+
