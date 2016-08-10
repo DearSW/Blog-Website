@@ -1,0 +1,71 @@
+<%- include header2_1 %>
+
+
+<% posts.forEach(function(post, index) { %>
+
+    <div class="ui stackable grid container segment">
+        <div class="two column row">
+            <div class="left floated column">
+                <h2 class="ui green  header">
+                    <i class="settings icon"></i>
+                    <div class="content">
+                        <%= post.title %>
+                        <div class="sub header">
+                            <%= post.time.minute%>
+                        </div>
+                    </div>
+                </h2>
+            </div>
+
+            <div class="right aligned right floated column">
+                <div class="ui labeled button" tabindex="0">
+                    <div id="m<% index %>" class="ui vertical green animated button">
+                        <div class="visible content">Look</div>
+                        <div class="hidden content">
+                            <i class="large long right arrow icon"></i>
+                        </div>
+                    </div>
+                    <a class="ui basic green left pointing label">
+                        999+
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="ui  m<% index %> modal">
+        <i class="close icon"></i>
+        <div class="header">
+            Profile Picture
+        </div>
+        <div class="image content">
+            <div class="ui medium image">
+                <img src="img/scaleImg.jpg">
+            </div>
+            <div class="description">
+                <div class="ui header">
+                    <%= post.title %>
+                </div>
+                <p><%= post.post %></p>
+            </div>
+        </div>
+        <div class="actions">
+            <div class="ui positive right labeled icon button">
+                Close
+                <i class="checkmark icon"></i>
+            </div>
+        </div>
+    </div>
+
+<% }) %>
+<script>
+    $('.ui.modal').each(function (index, element) {
+            var s = "m" + index;
+        $('.ui.s.modal')
+                .modal('setting', 'transition', 'Fade Up')
+                .modal({blurring: true})
+                .modal('attach events', '#' + s, 'show');
+    })
+</script>
+
+<%- include footer2 %>

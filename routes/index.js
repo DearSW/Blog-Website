@@ -55,7 +55,7 @@ module.exports = function(app) {
 		    if (err) {
 		      	posts = [];
 		    } 
-		    res.render('index', {
+		    res.render('index2', {
 			    title: '主页',
 			    posts: posts,
 			    page: page,
