@@ -1,10 +1,15 @@
 
 
+<!--  尾部  用在article2 上 -->
+
 
     </div>
     <!--------------------------------------------------------------------------->
-    <script src="../public/javascripts/jquery-1.12.4.js"></script>
+
+    <script src="../public/lib/jquery/jquery.min.js"></script>
+
     <script src="../public/css/semantic/dist/semantic.min.js"></script>
+
     <script>
 
         //toggle() 方法切换元素的可见状态。
@@ -13,11 +18,22 @@
         //该方法检查每个元素中指定的类。如果不存在则添加类，如果已设置则删除之。这就是所谓的切换效果。
         $(function() {
             $("#btnToggle").click(function() {
+                // 顶部右侧按钮样式切换 三条横线和叉
                 $(this).toggleClass("btn-close");
+
+                // body页面的样式切换 overflow:hidden 和 overflow:scroll, background切换;
                 $("#bodyToggle").toggleClass("no-scroll");
+
+                // 页面中的导航栏 显示与隐藏
                 $("#nav").toggleClass("hide");
+
+                // 同样也是页面导航,有点迷糊
                 $("#navToggle").toggleClass("nav-fade-in");
+
+                // 正文在导航也页面时是隐藏的
                 $("#contentToggle").toggleClass("hide");
+
+                // 动态背景的暂停切换
                 $("#bgToggle").toggleClass("bg-paused");
             });
         });

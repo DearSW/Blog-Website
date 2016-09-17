@@ -1,36 +1,89 @@
+
+
+
+<!-- 主页头部 用在index2上 -->
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>首页</title>
     <meta http-equiv="x-ua-compatible" content="IE=edge,chrome=1">
+
+    <!-- SEO -->
     <meta name="keywords" content="DearSW">
     <meta name="author" content="DearSW">
     <meta name="description" content="DearSW">
+
+    <!--IE兼容模式，优先使用最新版的IE和Chrome内核-->
+    <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge,chrome=1" />
+
+    <!--强制优先使用360webkit内核-->
+    <meta name="renderer" content="webkit" />
+
+    <!--为移动端设备优化，设置看见区域的宽度和初始缩放比例-->
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-    <link rel="short icon" type="image/icon" href="../public/images/icon/icon.jpg">
+    <!-- icon图标 -->
+    <link rel="short icon" type="image/icon" href="../public/imgs/icon/icon.jpg">
 
-    <link rel="stylesheet" href="../public/css/pure-release-0.5.0/base-min.css">
-    <link rel="stylesheet" href="../public/css/pure-release-0.5.0/grids-min.css">
-    <link rel="stylesheet" href="../public/css/pure-release-0.5.0/grids-responsive-min.css">
 
+    <!-- 初始化样式 -->
     <link rel="stylesheet" href="../public/css/normalize.css">
     <link rel="stylesheet" href="../public/css/normalizeForDearSW.css">
 
-    <!--<link rel="stylesheet" href="../public/css/semantic/dist/components/button.min.css">-->
-    <!--<link rel="stylesheet" href="../public/css/semantic/dist/components/icon.min.css">-->
-    <link rel="stylesheet" href="../public/css/font-awesome-4.5.0/css/font-awesome.min.css">
+    <!-- 组件样式 -->
 
+    <!-- 主页动态背景 -->
     <link rel="stylesheet" href="../public/css/components/background-animation.css">
-    <link rel="stylesheet" href="../public/css/components/footer-cards.css">
-    <link rel="stylesheet" href="../public/css/index.css">
+
+    <!-- footer样式 -->
+    <!--<link rel="stylesheet" href="../public/css/components/footer-cards.css">-->
+
+    <!-- 主页基础样式 -->
+    <link rel="stylesheet" href="../public/css/index2.css">
+
+    <!-- 轮播样式 -->
     <link rel="stylesheet" href="../public/css/slide.css">
+
+    <!-- semantic UI 引入 -->
     <link rel="stylesheet" href="../public/css/semantic/dist/semantic.min.css">
-    <!--[if ite IE 8] >
-    <link rel="stylesheet" href="../public/css/pure-release-0.5.0/grids-responsive-old-ie-min.css">
-    <![endif]-->
-    <!--<script src="javascripts/modernizr-custom.javascripts"></script>-->
+
+
+    <style>
+        /* .m-footer start */
+        .m-footer {
+            /* absolute 配合 bottom: 0; 来使footer放到页面底 */
+            /*position: absolute;*/
+            position: relative;
+            width: 100%;
+            height: 40px;
+            background: #0b0b16;
+        }
+
+        .m-footer .list {
+            /* 联系列表 */
+            text-align: center;
+            font-size: 12px;
+            padding-top: 10px;
+
+        }
+        .m-footer .list a {
+            display: inline-block;
+            color: #f4f4f4;
+        }
+
+        .m-footer .list a:hover {
+            color: #71beff;
+        }
+        .m-footer .list .concat {
+            display: inline-block;
+            margin: 0 5px;
+        }
+    </style>
 </head>
 <!--no-scroll 切换-->
 <body id="bodyToggle" class="no-scroll">
@@ -40,24 +93,24 @@
 <!--bg-paused 切换-->
 <div id="bgToggle" class="bg">
     <!--1-->
-    <picture class="bg-position" style="background-image: url(../public/images/odient/odient-1-desktop.jpg);">
+    <picture class="bg-position" style="background-image: url(../public/imgs/odient/odient-1-desktop.jpg);">
         <source srcset="./images/odient/odient-1-desktop.jpg 1x, ./images/odient/odient-1-desktop-2x.jpg 2x" media="(min-width: 1024px)">
         <source srcset="./images/odient/odient-1-tablet.jpg 1x, ./images/odient/odient-1-tablet-2x.jpg 2x" media="(min-width: 768px)">
         <source srcset="./images/odient/odient-1-mobile.jpg 1x, ./images/odient/odient-1-mobile-2x.jpg 2x">
     </picture>
     <!--2-->
     <div class="bg-animations">
-        <picture class="bg-position bg-animation bg-z1"  style="background-image: url(../public/images/odient/odient-1-desktop.jpg);">
+        <picture class="bg-position bg-animation bg-z1"  style="background-image: url(../public/imgs/odient/odient-1-desktop.jpg);">
             <source srcset="./images/odient/odient-1-desktop.jpg 1x, ./images/odient/odient-1-desktop-2x.jpg 2x" media="(min-width: 1024px)">
             <source srcset="./images/odient/odient-1-tablet.jpg 1x, ./images/odient/odient-1-tablet-2x.jpg 2x" media="(min-width: 768px)">
             <source srcset="./images/odient/odient-1-mobile.jpg 1x, ./images/odient/odient-1-mobile-2x.jpg 2x">
         </picture>
-        <picture class="bg-position bg-animation bg-z2"  style="background-image: url(../public/images/odient/odient-2-desktop.jpg);">
+        <picture class="bg-position bg-animation bg-z2"  style="background-image: url(../public/imgs/odient/odient-2-desktop.jpg);">
             <source srcset="./images/odient/odient-2-desktop.jpg 1x, ./images/odient/odient-2-desktop-2x.jpg 2x" media="(min-width: 1024px)">
             <source srcset="./images/odient/odient-2-tablet.jpg 1x, ./images/odient/2-tablet-2x.jpg 2x" media="(min-width: 768px)">
             <source srcset="./images/odient/odient-2-mobile.jpg 1x, ./images/odient/odient-2-mobile-2x.jpg 2x">
         </picture>
-        <picture class="bg-position bg-animation bg-z3" style="background-image: url(../public/images/odient/odient-3-desktop.jpg);">
+        <picture class="bg-position bg-animation bg-z3" style="background-image: url(../public/imgs/odient/odient-3-desktop.jpg);">
             <source srcset="./images/odient/odient-3-desktop.jpg 1x, ./images/odient/odient-3-desktop-2x.jpg 2x" media="(min-width: 1024px)">
             <source srcset="./images/odient/odient-3-tablet.jpg 1x, ./images/odient/odient-3-tablet-2x.jpg 2x" media="(min-width: 768px)">
             <source srcset="./images/odient/odient-3-mobile.jpg 1x, ./images/odient/odient-3-mobile-2x.jpg 2x">
@@ -66,14 +119,14 @@
 </div>
 
 
-<!------------------------------------------------------------------>
+<!-----------------------header 开始------------------------------------------->
 <header id="header">
 
     <div class="pure-g">
         <div class="pure-u-1">
             <div class="box-inner">
                 <!--图标-->
-                <a href="#"><i class="fa fa-subway fa-2x"></i></a>
+                <a href="#"><i class="icon setting huge"></i></a>
                 <!--按钮 toggle 切换 btn-close添加在这里-->
                 <a href="#" id="btnToggle" class="btn btn-close">
                     <div class="btn-inner">
@@ -86,7 +139,7 @@
 
 </header>
 
-<!------------------------------------------------------------------->
+<!-----------------------nav 开始-------------------------------------------->
 <div id="nav" class="nav">
 
     <!--切换处 nav-fade-in，特殊导航面-->
@@ -148,25 +201,28 @@
 
 </div>
 
-<!--------------------------------------------------------------------------->
-<div class="clearfix"></div>
+<!--------------------------body 开始------------------------------------------------->
+
 <!--主体-->
 <!--这里有一个切换，nav-fade-in-->
-<div id="contentToggle" class="pure-g hide">
+<div id="contentToggle" class="hide">
     <!--下面都是内容去域-->
-    <!--
-        格式：
-            <div class="pure-u-1">
-            <div class="inner XXXX">
-     -->
-    <div class="pure-u-1">
-        <div class="inner">
-            <h3>Message</h3>
-            <% if (success) { %>
-                <p><%= success %></p>
-            <% } %>
-            <% if (error) { %>
-                <p><%= error %></p>
-            <% } %>
+
+    <!-- 消息提示区 -->
+    <div>
+        <div class="ui grid container">
+            <div class="one column row">
+                <div class="column">
+                    <div class="ui segment">
+                        <h3>Message</h3>
+                        <% if (success) { %>
+                        <p><%= success %></p>
+                        <% } %>
+                        <% if (error) { %>
+                        <p><%= error %></p>
+                        <% } %>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>

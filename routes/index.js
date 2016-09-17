@@ -48,7 +48,7 @@ function checkNotLogin(req, res, next) {
 module.exports = function(app) {
 
 	//-----------------------------------------------------
-	//首页
+	// 首页,动态的页面
 	app.get("/", function(req, res, next) {
 		var page = parseInt(req.query.p) || 1;
 		Post.prototype.getTen(null, page, function (err, posts, total) {
@@ -67,6 +67,8 @@ module.exports = function(app) {
 		    });
 	  	});
 	});
+
+
 	//---------------------------------------------------
 	//关于about
 	app.get("/about", function(req, res, next) {
@@ -77,83 +79,86 @@ module.exports = function(app) {
 		});
 	});
 
+
+
 	//--------------------------------------------------
 	//文章 article
+
 		//读取所有文章
-	app.get("/articles", function(req, res, next) {
-		Post.prototype.get(null, function(err, posts) {
-			if(err) {
-				console.log("查看1：" + err);
-				posts = [];
-				req.flash("error", "没有找到");
-				//查询失败任然展示页面
-				res.render("article2", { 
-					title: "主页",
-					posts: posts,
-					user: req.session.user,
-					success: req.flash("success").toString(),
-					error: req.flash("error").toString()
-			 	});
-			}
+        app.get("/articles", function(req, res, next) {
+            Post.prototype.get(null, function(err, posts) {
+                if(err) {
+                    console.log("查看1：" + err);
+                    posts = [];
+                    req.flash("error", "没有找到");
+                    //查询失败任然展示页面
+                    res.render("article2", {
+                        title: "主页",
+                        posts: posts,
+                        user: req.session.user,
+                        success: req.flash("success").toString(),
+                        error: req.flash("error").toString()
+                    });
+                }
 
-			console.log("查看6：" + writeObj(posts));
-			res.render("article2", { 
-				title: "主页",
-				posts: posts,
-				user: req.session.user,
-				success: req.flash("success").toString(),
-				error: req.flash("error").toString()
-		 	});
+                console.log("查看6：" + writeObj(posts));
+                res.render("article2", {
+                    title: "主页",
+                    posts: posts,
+                    user: req.session.user,
+                    success: req.flash("success").toString(),
+                    error: req.flash("error").toString()
+                });
 
-		});
-	});
+            });
+        });
 		//读取一篇文章
-	app.get("/articleSearch/:title", function(req, res, next) {
-		Post.prototype.getOne(req.params.title, function(err, post) {
-			if(err) {
-				req.flash('error', err);
-				return res.redirect('/');
-			}
-			res.render('article', {
-				title: req.params.title,
-			    post: post,
-			    user: req.session.user,
-			    success: req.flash('success').toString(),
-			    error: req.flash('error').toString()
-			});
-		});
-	});
+        app.get("/articleSearch/:title", function(req, res, next) {
+            Post.prototype.getOne(req.params.title, function(err, post) {
+                if(err) {
+                    req.flash('error', err);
+                    return res.redirect('/');
+                }
+                res.render('article', {
+                    title: req.params.title,
+                    post: post,
+                    user: req.session.user,
+                    success: req.flash('success').toString(),
+                    error: req.flash('error').toString()
+                });
+            });
+        });
 		//编辑
-	app.get('/edit/:title', checkLogin);
-	app.get('/edit/:title', function(req, res, next) {
-		var currentUser = req.session.user;
-		Post.prototype.edit(req.params.title, function(err, post) {
-			if(err) {
-				req.flash('error', err);
-				return res.redirect('back');
-			}
-			res.render('edit', {
-				title: '编辑',
-				post: post,
-				user: req.session.user, 
-				success: req.flash('success').toString(),
-      			error: req.flash('error').toString()
-			});
-		});
-	});
-	app.post('/edit/:title', checkLogin);
-	app.post('/edit/:title', function (req, res) {
-		var currentUser = req.session.user;
-		Post.prototype.update(req.params.title, req.body.post, function (err) {
-			var url = encodeURI('/articleSearch/' + req.params.title);
-	    	if (err) {
-	    	  	req.flash('error', "修改失败！"); 
-	      		return res.redirect(url);//出错！返回文章页
-	    	}
-	    	req.flash('success', '修改成功!');
-	    	res.redirect(url);//成功！返回文章页
-  		});
-	});
+        app.get('/edit/:title', checkLogin);
+        app.get('/edit/:title', function(req, res, next) {
+            var currentUser = req.session.user;
+            Post.prototype.edit(req.params.title, function(err, post) {
+                if(err) {
+                    req.flash('error', err);
+                    return res.redirect('back');
+                }
+                res.render('edit', {
+                    title: '编辑',
+                    post: post,
+                    user: req.session.user,
+                    success: req.flash('success').toString(),
+                    error: req.flash('error').toString()
+                });
+            });
+        });
+        app.post('/edit/:title', checkLogin);
+        app.post('/edit/:title', function (req, res) {
+            var currentUser = req.session.user;
+            Post.prototype.update(req.params.title, req.body.post, function (err) {
+                var url = encodeURI('/articleSearch/' + req.params.title);
+                if (err) {
+                    req.flash('error', "修改失败！");
+                    return res.redirect(url);//出错！返回文章页
+                }
+                req.flash('success', '修改成功!');
+                res.redirect(url);//成功！返回文章页
+            });
+        });
 
 	//-------------------------------------------------------
 	//测试
@@ -212,7 +217,7 @@ module.exports = function(app) {
 	//上传
 	var storage = multer.diskStorage({
 	    destination: function (req, file, cb){
-	        cb(null, '../public/images')
+	        cb(null, '../public/imgs')
 	    },
 	    filename: function (req, file, cb){
 	        cb(null, file.originalname)

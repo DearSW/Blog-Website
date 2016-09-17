@@ -1,95 +1,100 @@
 
 <%- include header2 %>
 
-        <!--slide-->
-        <div class="pure-u-1">
-            <div class="inner">
-                <div id="slide">
+        <div>
 
-                    <a href="#">
-                        <div class="moni">
+            <!-- slider -->
+            <div class="ui grid container">
+                <div class="one column row">
+                    <div class="column">
+                        <div class="ui segment">
+
+                            <!-- 轮播 -->
+                            <div id="slide">
+
+                                <a href="#">
+                                    <div class="moni">
+                                    </div>
+                                </a>
+
+                                <div class="source">
+                                    <a href=""><img class="pure-img" src="../public/imgs/slide/1.jpg"></a>
+                                </div>
+                            </div>
                         </div>
-                    </a>
-
-                    <div class="source">
-                        <a href=""><img class="pure-img" src="../public/images/slide/1.jpg"></a>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <!--article-->
-        <div class="pure-u-1">
-            <div class="article inner">
-                    <section>
 
-                        <!--title-->
-                        <div class="title">
-                            <div class="intro-inner">
-                                <h1>DearSW</h1>
+            <!--article-->
+
+            <div class="ui grid container">
+                <div class="one column row">
+                    <div class="column">
+                        <div class="ui segment">
+                            <!-- 文章 -->
+                            <div class="article inner">
+                                <section>
+
+                                    <!--title-->
+                                    <div class="title">
+                                        <div class="intro-inner">
+                                            <h1>DearSW</h1>
+                                        </div>
+                                    </div>
+
+                                    <!--content-->
+                                    <div class="text">
+                                        <div class="text-inner">
+                                            <h1>Hello,my dear friends.</h1>
+                                        </div>
+                                    </div>
+
+                                </section>
                             </div>
                         </div>
-
-                        <!--content-->
-                        <div class="text">
-                            <div class="text-inner">
-                                <h1>Hello,my dear friends.</h1>
-                            </div>
-                        </div>
-
-                    </section>
-            </div>
-        </div>
-
-        <!--footer-->
-        <div class="pure-u-1">
-            <footer class="footer-cards green inner footerforindex">
-                <div class="pure-g">
-                    <div class="pure-u-1 pure-u-md-1-3">
-                        <!--1 card-->
-                        <!--<a>
-                            Live preview
-                            <i class="fa fa-th"></i>
-                        </a>-->
-                        <button class="ui circular facebook icon button">
-                            <i class="facebook icon"></i>
-                        </button>
-                    </div>
-                    <div class="pure-u-1 pure-u-md-1-3">
-                        <!--2 card-->
-                        <!--<a>
-                            Screenshots
-                            <i class="fa fa-photo"></i>
-                        </a>-->
-                        <button class="ui circular twitter icon button">
-                            <i class="twitter icon"></i>
-                        </button>
-                    </div>
-                    <div class="pure-u-1 pure-u-md-1-3">
-                        <!--3 card-->
-                        <!--<a>
-                            Share
-                            <i class="fa fa-google-plus"></i>
-                            <i class="fa fa-facebook-f"></i>
-                            <i class="fa fa-twitter"></i>
-                        </a>-->
-                        <button class="ui github icon button">
-                            <i class="github icon"></i>
-                            github
-                        </button>
-                        <button class="ui qq icon button">
-                            <i class="qq icon"></i>
-                            fackbook
-                        </button>
                     </div>
                 </div>
-            </footer>
+            </div>
+
+
+            <!-- footer -->
+            <div class="ui grid container">
+                <div class="one column row">
+                    <div class="column">
+                        <div class="ui segment">
+                            <!-- footer -->
+                            <footer>
+                                <!-- footer start -->
+                                <div class="m-footer" data-structure="footer">
+
+                                    <!-- 来一个小列表 展示一点信息 -->
+                                    <div class="list">
+                                        <a href="https://github.com/DearSW">DearSW</a>
+                                        <div class="concat">-</div>
+                                        <a href="https://github.com/DearSW">Contact</a>
+                                        <div class="concat">-</div>
+                                        <a href="https://github.com/DearSW">Github</a>
+                                    </div>
+                                </div>
+                                <!-- footer end -->
+                            </footer>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
-    </div>
+
+
 
 
     <!--------------------------------------------------------------------------->
-    <script src="../public/javascripts/jquery-1.12.4.js"></script>
+    <!--  引入 jquery3.0 -->
+
+    <script src="../public/lib/jquery/jquery.min.js"></script>
+
     <script>
 
         //toggle() 方法切换元素的可见状态。
@@ -97,12 +102,26 @@
         //toggleClass() 对设置或移除被选元素的一个或多个类进行切换。
         //该方法检查每个元素中指定的类。如果不存在则添加类，如果已设置则删除之。这就是所谓的切换效果。
         $(function() {
+
+            // 使用js进行控制样式的切换
             $("#btnToggle").click(function() {
+
+                // 顶部右侧按钮样式切换 三条横线和叉
                 $(this).toggleClass("btn-close");
+
+                // body页面的样式切换 overflow:hidden 和 overflow:scroll, background切换;
                 $("#bodyToggle").toggleClass("no-scroll");
+
+                // 页面中的导航栏 显示与隐藏
                 $("#nav").toggleClass("hide");
+
+                // 同样也是页面导航,有点迷糊
                 $("#navToggle").toggleClass("nav-fade-in");
+
+                // 正文在导航也页面时是隐藏的
                 $("#contentToggle").toggleClass("hide");
+
+                // 动态背景的暂停切换
                 $("#bgToggle").toggleClass("bg-paused");
             });
         });
@@ -144,9 +163,9 @@
                 $(".moni").addClass("fei");
                 $(".momi p").addClass("pure-img");
                 //在过渡的同时就换上了下一个背景，衔接更自然；
-//              //src="../public/images/slide/1.jpg"
-                $(".moni p").css("background-image","url(../public/images/slide/" + settings.nowimg + ".jpg)");
-                $(".source img").attr("src","../public/images/slide/" + settings.nowimg + ".jpg");
+//              //src="../public/imgs/slide/1.jpg"
+                $(".moni p").css("background-image","url(../public/imgs/slide/" + settings.nowimg + ".jpg)");
+                $(".source img").attr("src","../public/imgs/slide/" + settings.nowimg + ".jpg");
 
                 setTimeout(function(){
                     //去掉过渡

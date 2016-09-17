@@ -1,8 +1,8 @@
 
+/* 主页index2的样式 */
 
-
-body {
-    background: #ff4500;
+#bodyToggle {
+    height: auto !important;
 }
 
 /**
@@ -11,6 +11,8 @@ body {
 
 .no-scroll {
     overflow: hidden;
+    background: #ff4500 !important;
+    /* 设置为 !important 是为了防止与semantic起冲突 */
 }
 
 @media all and (max-width: 48em) {
@@ -36,7 +38,7 @@ body {
 .box-inner {
     width: 70%;
     margin: 0 auto;
-    padding-top: 120px;
+    padding-top: 75px;
     padding-bottom: 10px;
     display: table;
     /*table 妙用啊*/

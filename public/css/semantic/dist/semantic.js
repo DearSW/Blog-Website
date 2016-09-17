@@ -22316,7 +22316,7 @@ $.fn.visibility.settings = {
   // check position immediately on init
   initialCheck           : true,
 
-  // whether to refresh calculations after all page images load
+  // whether to refresh calculations after all page imgs load
   refreshOnLoad          : true,
 
   // whether to refresh calculations after page resize event
