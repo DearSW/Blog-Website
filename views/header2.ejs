@@ -36,12 +36,9 @@
     <link rel="stylesheet" href="../public/css/normalizeForDearSW.css">
 
     <!-- 组件样式 -->
-
     <!-- 主页动态背景 -->
     <link rel="stylesheet" href="../public/css/components/background-animation.css">
 
-    <!-- footer样式 -->
-    <!--<link rel="stylesheet" href="../public/css/components/footer-cards.css">-->
 
     <!-- 主页基础样式 -->
     <link rel="stylesheet" href="../public/css/index2.css">
@@ -54,6 +51,303 @@
 
 
     <style>
+
+        /* m-topmenu */
+
+        .m-topmenu {
+            position: relative;
+            margin-left: 80px;
+            width: 100%;
+            height: 57px;
+            z-index: 5;
+            /* 父层叠 */
+        }
+
+        /* 制作按钮 */
+        .m-topmenu .btn {
+            position: relative;
+            display: inline-block;
+            width: 21px;
+            height: 26px;
+            margin: 27px 0 0 0;
+            left: 21px;
+            padding: 0;
+        }
+
+        .m-topmenu .btn .btn-lines {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%);
+            display: block;
+            width: 20px;
+            height: 2px;
+            background-color: #000;
+            backface-visibility: hidden;
+            transition: background-color .2s ease;
+        }
+
+        .m-topmenu .btn .btn-lines:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: inline-block;
+            vertical-align: top;
+            width: 20px;
+            height: 2px;
+            background-color: #000;
+            transition: all .3s ease;
+            /* 向上移动 */
+            transform: translate(0,-6px);
+        }
+        .m-topmenu .btn .btn-lines:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: inline-block;
+            vertical-align: top;
+            width: 20px;
+            height: 2px;
+            background-color: #000;
+            transition: all .3s ease;
+            /* 向下移动 */
+            transform: translate(0,6px);
+        }
+
+        .m-topmenu .btn.btn-close  .btn-lines {
+            height: 0;
+        }
+
+        .m-topmenu .btn.btn-close  .btn-lines:before {
+            transform: rotate(45deg);
+            background-color: #FFFBFB;
+        }
+
+        .m-topmenu .btn.btn-close  .btn-lines:after {
+            transform: rotate(-45deg);
+            background-color: #FFFBFB;
+        }
+
+
+        /* 出现问题, m-topmenu and m-lfmenu 出现了层叠的问题,由于 m-lfmenu 后出现且覆盖了
+           整个屏幕,导致了什么问题?导致注册在 m-topmenu 上的点击事件无法点击了,也就被 m-lfmenu 挡住了,
+           所以这时候,层叠就至关重要了 z-index */
+
+        /* m-lfmenu 模块化代码走起 */
+
+        .m-lfmenu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            min-height: 100%;
+            height: 100%;
+            width: 100%;
+            z-index: 4;
+            /* 父层叠 */
+        }
+
+
+        /* A面 */
+        .m-lfmenu .band {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: #fafafa;
+            min-height: 100%;
+            height: 100%;
+            width: 80px;
+            cursor: pointer;
+            border-right: 1px solid #f2f2f2;
+            overflow: hidden;
+            color: #000;
+            transform: translate3d(0,0,0);
+            transition: width .3s linear;
+            z-index: 5;
+            /* 子层叠 */
+        }
+
+        .m-lfmenu .band:hover {
+            width: 100px;
+        }
+
+        .m-lfmenu .band .microanimation {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: #d4d4d5;
+            opacity: 0;
+        }
+
+        .m-lfmenu .band .microanimation.animate {
+
+            animation: change .7s;
+        }
+        @keyframes change {
+            0% {
+                opacity: 1;
+                height: 0;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%);
+                /* 把动画定位到中心位置开始 */
+                width: 100%;
+            }
+            50% {
+                opacity: .6;
+            }
+            100% {
+                opacity: 0;
+                height: 100%;
+                width: 100%;
+                top: 0;
+                left: 0;
+            }
+        }
+
+
+        .m-lfmenu .band .logo {
+            position: absolute;
+            top: 22px;
+            font-size: 18px;
+            left: 18px;
+            color: rgba(0,0,0,.95);
+            transition: left .3s;
+        }
+
+        .m-lfmenu .band .rgarrow {
+            font-family: NeutraDisp-BoldAlt;
+            font-size: 10px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            letter-spacing: 2px;
+            position: absolute;
+            top: 50%;
+            left: 20px;
+            margin-top: -10px;
+            overflow: hidden;
+            height: 17px;
+            width: 41px;
+            transform: rotate(-90deg);
+            transition: opacity .3s;
+            z-index: 4;
+            /* 子层叠 */
+        }
+
+        .m-lfmenu .band .lfarrow {
+            font-family: NeutraDisp-BoldAlt;
+            font-size: 10px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            letter-spacing: 2px;
+            position: absolute;
+            right: 0;
+            top: 50%;
+            margin-top: -12px;
+            height: 17px;
+            width: 41px;
+            transform: rotate(-90deg);
+            will-change: opacity;
+            transition: opacity .3s .2s;
+            z-index: 4;
+            /* 子层叠 */
+            opacity: 0;
+        }
+
+
+        /* B面 */
+        .m-lfmenu .B {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 80px;
+            right: 0;
+            width: calc(100% - 80px);
+            /* 让浏览器自动计算宽度,只要填好需要的长度表达式,在PC端基本兼容,但是移动端惨不忍睹 */
+            min-height: 100%;
+            height: 100%;
+            z-index: 4;
+            /* 子层叠 */
+            background: rgba(255, 255, 255, 0);
+            font-size: 0;
+            /* 主要为了解决inline-block之间那个1px的空隙的历史问题 */
+            animation: changeB_a .5s;
+        }
+
+        @keyframes changeB {
+            0% {
+                display: none;
+            }
+            100% {
+                display: block;
+            }
+        }
+
+        @keyframes changeB_a {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .m-lfmenu .B a {
+            position: relative;
+            height: 100%;
+            width: 20%;
+            background: green;
+            display: inline-block;
+            transition: transform .8s;
+        }
+
+        .m-lfmenu .B a:hover {
+            transform: scale(1.2);
+        }
+            /* 文字描述 */
+        .m-lfmenu .B .dpt {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%);
+            font-size: 2rem;
+            color: white;
+            font-style: oblique;
+            font-weight: 100;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            letter-spacing: 2px;
+        }
+            /* 图片背景 */
+        .m-lfmenu .B .Bbg {
+            height: 100%;
+            background-size: cover;
+        }
+        .m-lfmenu .B .Bbg.one{
+            background: url("../public/imgs/Asset1.jpg");
+            background-size: cover;
+        }
+        .m-lfmenu .B .Bbg.two{
+            background: url("../public/imgs/Asset2.jpg");
+            background-size: cover;
+        }
+        .m-lfmenu .B .Bbg.three{
+            background: url("../public/imgs/Asset3.jpg");
+            background-size: cover;
+        }
+        .m-lfmenu .B .Bbg.four{
+            background: url("../public/imgs/Asset4.jpg");
+            background-size: cover;
+        }
+        .m-lfmenu .B .Bbg.five{
+            background: url("../public/imgs/Asset5.jpg");
+            background-size: cover;
+        }
+
+
+
         /* .m-footer start */
         .m-footer {
             /* absolute 配合 bottom: 0; 来使footer放到页面底 */
@@ -122,84 +416,91 @@
 <!-----------------------header 开始------------------------------------------->
 <header id="header">
 
-    <div class="pure-g">
-        <div class="pure-u-1">
-            <div class="box-inner">
-                <!--图标-->
-                <a href="#"><i class="icon setting huge"></i></a>
-                <!--按钮 toggle 切换 btn-close添加在这里-->
-                <a href="#" id="btnToggle" class="btn btn-close">
-                    <div class="btn-inner">
-                        <div class="btn-lines"></div>
+    <!-- 最上面菜单栏 -->
+    <div id="topMenu">
+        <div class="m-topmenu">
+            <!--按钮 toggle 切换 btn-close添加在这里-->
+            <a id="btnToggle" class="btn btn-close" href="#" >
+                <div class="btn-lines"></div>
+            </a>
+        </div>
+    </div>
+
+
+    <!-- 左侧菜单栏 -->
+    <div id="lfMenu">
+        <div class="m-lfmenu">
+
+            <!-- 背景 -->
+            <div class="menubg">
+            </div>
+
+            <!-- 正面显示的菜单项 width:(80-100)-->
+            <div class="band">
+
+                <!-- microanimation -->
+                <div class="microanimation">
+
+                </div>
+
+                <!-- logo -->
+                <a href="#" class="logo">
+                    <i class="icon github big"></i>
+                </a>
+                <!-- right arrow opacity:(1-0)-->
+                <div class="rgarrow">
+                    <!--<i class="icon right arrow big"></i>-->
+                    <span>menu</span>
+                </div>
+
+                <!-- left arrow  opacity:(0-1)-->
+                <div class="lfarrow">
+                    <!--<i class="icon left arrow big"></i>-->
+                    <span>open</span>
+                </div>
+            </div>
+
+            <!-- 反面显示的菜单 -->
+            <div class="B">
+                <a href="/">
+                    <div class="Bbg one"></div>
+                    <div class="dpt">
+                        <p>主页</p>
+                    </div>
+                </a>
+                <a href="/articles">
+                    <div class="Bbg two"></div>
+                    <div class="dpt">
+                        <p>文章</p>
+                    </div>
+                </a>
+                <a href="/blogs">
+                    <div class="Bbg three"></div>
+                    <div class="dpt">
+                        <p>资源</p>
+                    </div>
+                </a>
+                <a href="https://github.com/DearSW">
+                    <div class="Bbg four"></div>
+                    <div class="dpt">
+                        <p>GitHub</p>
+                    </div>
+                </a>
+                <a href="/about">
+                    <div class="Bbg five"></div>
+                    <div class="dpt">
+                        <p>About</p>
                     </div>
                 </a>
             </div>
+
+
+
         </div>
     </div>
 
 </header>
 
-<!-----------------------nav 开始-------------------------------------------->
-<div id="nav" class="nav">
-
-    <!--切换处 nav-fade-in，特殊导航面-->
-    <div id="navToggle" class="nav-fade nav-fade-in">
-        <div class="box-outer">
-            <div class="nav-items pure-g">
-                <div class="pure-u-1 pure-u-md-1-5"><a href="/"><span>主页</span></a></div>
-                <div class="pure-u-1 pure-u-md-1-5"><a href="/articles"><span>文章</span></a></div>
-                <div class="pure-u-1 pure-u-md-1-5"><a href="/blogs"><span>资源</span></a></div>
-                <div class="pure-u-1 pure-u-md-1-5"><a href="https://github.com/DearSW"><span>Github</span></a></div>
-                <div class="pure-u-1 pure-u-md-1-5"><a href="/about"><span>About</span></a></div>
-            </div>
-        </div>
-
-        <!--导航footer-->
-        <div class="box-outer">
-            <div class="pure-g">
-                <div class="pure-u-1 pure-u-md-1-3">
-                    <div class="mp">
-                        <span>Odopod SF</span>
-                        <br />
-                        <span>391 Grove Street, San Francisco, CA </span>
-                        <br />
-                        <span>94102</span>
-                        <br />
-                        <span>415.436.9980</span>
-                        <br />
-                        <a href="#">Map It↗</a>
-                    </div>
-
-                </div>
-                <div class="pure-u-1 pure-u-md-1-3">
-                    <div class="mp">
-                        <span>Odopod NY</span>
-                        <br />
-                        <span>1675 Broadway, New York, NY 10019</span>
-                        <br />
-                        <span>415.436.9980</span>
-                        <br />
-                        <a href="#">Map It↗</a>
-                    </div>
-
-                </div>
-                <div class="pure-u-1 pure-u-md-1-3">
-                    <div class="mp">
-                        <span>Get in Touch</span>
-                        <br />
-                        <span>Sign up for our newsletter +</span>
-                        <br />
-                        <a href="#">hello@odopod.com↗</a>
-
-                    </div>
-
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-</div>
 
 <!--------------------------body 开始------------------------------------------------->
 
