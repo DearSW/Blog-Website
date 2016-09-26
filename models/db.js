@@ -1,7 +1,12 @@
-﻿var settings = require("../settings");
+﻿
+// mongodb 数据库的连接封装
+
+var settings = require("../settings");
 var Db = require("mongodb").Db,
 	Connection = require("mongodb").Connection,
 	Server = require("mongodb").Server;
+
+// 暴露出 数据库实例, 赋值给一个对象
 module.exports = new Db(settings.db,new Server(settings.host,settings.port),{ safe: true });
 // 其中通过 new Db(settings.db, 
 // new Server(settings.host, settings.port), {safe: true}); 

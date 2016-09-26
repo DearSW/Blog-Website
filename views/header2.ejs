@@ -10,7 +10,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>首页</title>
+    <title>DearSW</title>
     <meta http-equiv="x-ua-compatible" content="IE=edge,chrome=1">
 
     <!-- SEO -->
@@ -26,6 +26,7 @@
 
     <!--为移动端设备优化，设置看见区域的宽度和初始缩放比例-->
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     <!-- icon图标 -->
     <link rel="short icon" type="image/icon" href="../public/imgs/icon/icon.jpg">
@@ -39,25 +40,28 @@
     <!-- 主页动态背景 -->
     <link rel="stylesheet" href="../public/css/components/background-animation.css">
 
+    <!-- loader -->
+    <link rel="stylesheet" href="../public/css/components/loader.css">
 
     <!-- 主页基础样式 -->
     <link rel="stylesheet" href="../public/css/index2.css">
 
-    <!-- 轮播样式 -->
-    <link rel="stylesheet" href="../public/css/slide.css">
+    <!-- 轮播样式 去掉这个轮播  -->
+    <!--<link rel="stylesheet" href="../public/css/slide.css">-->
 
     <!-- semantic UI 引入 -->
     <link rel="stylesheet" href="../public/css/semantic/dist/semantic.min.css">
 
 
     <style>
+        * { box-sizing: border-box; }
 
         /* m-topmenu */
 
         .m-topmenu {
             position: relative;
             margin-left: 80px;
-            width: 100%;
+            width: calc(100% - 80px);
             height: 57px;
             z-index: 5;
             /* 父层叠 */
@@ -298,7 +302,7 @@
             position: relative;
             height: 100%;
             width: 20%;
-            background: green;
+            background: transparent;
             display: inline-block;
             transition: transform .8s;
         }
@@ -347,7 +351,33 @@
         }
 
 
+        /* m-rightArea */
+        .m-rightArea {
+            position: relative;
+            margin-left: 80px;
+            top: 0;
+            left: 0;
+            width: calc(100% - 80px);
+            height: 500px;
+            overflow: hidden;
+            z-index: 3;
+            /* 父层叠 */
 
+        }
+
+        .m-rightArea .mac_video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 2;
+            width: 100%;
+            height: 100%;
+        }
+
+        .m-rightArea .mac_video video {
+            position: relative;
+            width: 50%;
+        }
         /* .m-footer start */
         .m-footer {
             /* absolute 配合 bottom: 0; 来使footer放到页面底 */
@@ -378,9 +408,25 @@
             margin: 0 5px;
         }
     </style>
+
+
 </head>
 <!--no-scroll 切换-->
 <body id="bodyToggle" class="no-scroll">
+
+<!-- loader -->
+
+<div id="loader-wrapper">
+    <div class="loader-section section-left"></div>
+    <div class="loader-section section-right"></div>
+    <canvas width="400" height="200"> Waiting... </canvas>
+    <div class="load_title">
+        <span>DearSW loading...</span>
+        <br>
+        <span>V1.0</span>
+    </div>
+</div>
+
 
 <!------------------------------------------------------------------>
 <!--背景制作-->
@@ -499,6 +545,16 @@
         </div>
     </div>
 
+    <!-- 右侧菜单栏 -->
+    <div id="rgMenu">
+        <div class="m-rightArea">
+            <div class="mac_video">
+                <video class="video" autoplay="" loop="" src="../public/videos/uzik.mp4" ></video>
+            </div>
+        </div>
+    </div>
+
+
 </header>
 
 
@@ -514,14 +570,19 @@
         <div class="ui grid container">
             <div class="one column row">
                 <div class="column">
+
+                    <h3 class="ui header aligned center">Message</h3>
                     <div class="ui segment">
-                        <h3>Message</h3>
-                        <% if (success) { %>
-                        <p><%= success %></p>
-                        <% } %>
-                        <% if (error) { %>
-                        <p><%= error %></p>
-                        <% } %>
+                        <div>
+                            <!-- 传入的 req.flash().toString()参数-->
+                            <% if (success) { %>
+                            <p><%= success %></p>
+                            <% } %>
+                            <% if (error) { %>
+                            <p><%= error %></p>
+                            <% } %>
+                        </div>
+
                     </div>
                 </div>
             </div>

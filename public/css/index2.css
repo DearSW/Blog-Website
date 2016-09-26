@@ -1,9 +1,12 @@
 
+
+
+
+
+
+
 /* 主页index2的样式 */
 
-#bodyToggle {
-    height: auto !important;
-}
 
 /**
  *切换到导航时，才添加这个类
@@ -17,7 +20,7 @@
 
 @media all and (max-width: 48em) {
     .no-scroll {
-        overflow: scroll;
+        overflow: hidden;
     }
 }
 

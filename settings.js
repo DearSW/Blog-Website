@@ -1,4 +1,9 @@
-﻿module.exports = { 
+﻿
+
+
+// 使用 module.exports 来暴露数据,之后直接赋值给一个对象,利用对象来应用
+
+module.exports = {
   cookieSecret: 'myblog', 
   db: 'blog', 
   host: 'localhost',

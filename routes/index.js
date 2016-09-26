@@ -9,8 +9,12 @@
 // module.exports = router;
 var crypto = require("crypto");
 var User = require("../models/user.js");
+
+// 获取文章对象
 var Post = require("../models/post.js");
+
 var path = require("path");
+
 var multer = require('multer');
 /**
  * 取出一个object的所有属性值
@@ -29,15 +33,20 @@ function writeObj(obj) {
  * 路由中间件
  * 检测登录状态
  */
+// 检查已经登录
 function checkLogin(req, res, next) {
+    // 如果没有登录,则退出,返回到登录界面
 	if(!req.session.user) {
 		req.flash("error", "未登录");
+        // 重定向到 /login 登录界面
 		res.redirect("/login");
 	}
 	next();
 }
 
+// 检查没有登录
 function checkNotLogin(req, res, next) {
+    // 如果登录了,则返回
 	if(req.session.user) {
 		req.flash("error", "已登录");
 		res.redirect("back");
@@ -45,16 +54,26 @@ function checkNotLogin(req, res, next) {
 	next();
 }
 
+// 将路由控制模块暴露出去
 module.exports = function(app) {
 
 	//-----------------------------------------------------
 	// 首页,动态的页面
 	app.get("/", function(req, res, next) {
+
+        // 如果 请求信息 req 携带有查询参数,则使用,否则就默认为 1;
 		var page = parseInt(req.query.p) || 1;
+        // 调用 Post 实例的原型方法, 获取十篇文章
+        // Post.prototype.getTen = function(name, page, callback) {};
+        // callback(null, docs, total);
 		Post.prototype.getTen(null, page, function (err, posts, total) {
+
+            // function 为回调函数, posts 是数据库返回的文档, total 是总数量;
 		    if (err) {
 		      	posts = [];
-		    } 
+		    }
+
+            // 响应信息的渲染,第一个参数为ejs页面模版,第二个为传入这个模版的参数,一段json数据;
 		    res.render('index2', {
 			    title: '主页',
 			    posts: posts,
@@ -82,9 +101,10 @@ module.exports = function(app) {
 
 
 	//--------------------------------------------------
-	//文章 article
+	// 文章 article
 
-		//读取所有文章
+		// 读取所有文章, req 是请求信息, res 是响应信息, next 是回调函数, 位置是固定的;
+        // get() 有两个参数, 第一个为路由,第二个为 回调函数;
         app.get("/articles", function(req, res, next) {
             Post.prototype.get(null, function(err, posts) {
                 if(err) {
@@ -92,7 +112,7 @@ module.exports = function(app) {
                     posts = [];
                     req.flash("error", "没有找到");
                     //查询失败任然展示页面
-                    res.render("article2", {
+                    res.render("article3", {
                         title: "主页",
                         posts: posts,
                         user: req.session.user,
@@ -102,7 +122,7 @@ module.exports = function(app) {
                 }
 
                 console.log("查看6：" + writeObj(posts));
-                res.render("article2", {
+                res.render("article3", {
                     title: "主页",
                     posts: posts,
                     user: req.session.user,

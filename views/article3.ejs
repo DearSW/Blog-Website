@@ -1,0 +1,577 @@
+
+
+
+<!-- 文章 -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>DearSW</title>
+
+    <meta http-equiv="x-ua-compatible" content="IE=edge,chrome=1">
+
+    <!-- SEO -->
+    <meta name="keywords" content="DearSW">
+    <meta name="author" content="DearSW">
+    <meta name="description" content="DearSW">
+
+    <!--IE兼容模式，优先使用最新版的IE和Chrome内核-->
+    <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge,chrome=1" />
+
+    <!--强制优先使用360webkit内核-->
+    <meta name="renderer" content="webkit" />
+
+    <!--为移动端设备优化，设置看见区域的宽度和初始缩放比例-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0, maximum-scale=1">
+
+    <!-- icon图标 -->
+    <link rel="short icon" type="image/icon" href="../public/imgs/icon/icon.jpg">
+
+
+    <!-- 初始化样式 -->
+    <link rel="stylesheet" href="../public/css/normalize.css">
+    <link rel="stylesheet" href="../public/css/normalizeForDearSW.css">
+
+    <!-- semantic UI 引入 -->
+    <link rel="stylesheet" href="../public/css/semantic/dist/semantic.min.css">
+
+
+
+    <style>
+
+        body {
+            background: #00b5ad;
+        }
+        .wrap {
+            position: relative;
+            width: 100%;
+            height: 397px;
+        }
+
+        @media all and (max-width: 48em) {
+            .wrap {
+                height: 200px;
+            }
+        }
+
+        /* section start */
+        .m-article {
+            position: relative;
+            display: block;
+            margin: 0;
+            padding: 10px 0;
+        }
+
+        .m-article .lfcontent,
+        .m-article .rgcontent {
+            position: absolute;
+            display: block;
+            top: 50%;
+            transform: translateY(-50%);
+            word-wrap: break-word;
+            word-spacing: normal;
+            word-break: break-all;
+        }
+
+        .m-article .lfcontent .title,
+        .m-article .rgcontent .title {
+            position: relative;
+            text-align: center;
+            font-size: 1.6rem;
+            font-weight: bold;
+        }
+
+        .m-article .lfcontent .title:before,
+        .m-article .rgcontent .title:before {
+            content: '';
+            position: absolute;
+            width: 70px;
+            height: 2px;
+            background: black;
+            top: 50%;
+            left: 0;
+        }
+
+
+        .m-article .lfcontent .date,
+        .m-article .rgcontent .date {
+            text-align: center;
+            display: table;
+            margin: 0 auto;
+            padding-right: 47px;
+            padding-top: 7px;
+            font-size: smaller;
+            font-style: oblique;
+            font-weight: bold;
+        }
+
+        .m-article .lfcontent .description,
+        .m-article .rgcontent .description {
+            position: relative;
+            padding-top: 12px;
+            display: table;
+            width: 354px;
+            margin: 0 auto;
+            padding-left: 112px;
+            color: rgba(0,0,0,.85);
+            text-align: left;
+        }
+
+        .m-article .lfcontent .showmr {
+            background: #f12626;
+            display: table;
+            margin: 0 auto;
+            margin-right: 112px;
+            margin-top: 29px;
+            padding: 8px 18px;
+            border-radius: 40px;
+            font-weight: 100;
+            letter-spacing: 2px;
+            color: #f5f1f1;
+        }
+
+        .m-article .rgcontent .showmr {
+            background: #2185d0;
+            display: table;
+            margin: 0 auto;
+            margin-right: 112px;
+            margin-top: 29px;
+            padding: 8px 18px;
+            border-radius: 40px;
+            font-weight: 100;
+            letter-spacing: 2px;
+            color: #f5f1f1;
+        }
+
+
+        .m-article .lfcontent .showmr:hover {
+            background: #6a6a6a;
+        }
+
+        .m-article .rgcontent .showmr:hover {
+            background: #6a6a6a;
+        }
+
+        .m-article .rgimg,
+        .m-article .lfimg {
+            position: relative;
+            overflow: hidden;
+            height: 300px;
+            padding: 1rem;
+        }
+
+        @media all and (max-width: 48em) {
+            .m-article .rgimg,
+            .m-article .lfimg {
+                overflow: hidden;
+                height: 200px;
+            }
+            .m-article .lfcontent,
+            .m-article .rgcontent {
+                padding: 0;
+                padding-top: 3px;
+            }
+            .m-article .lfcontent:before {
+                /* 一定要先写 content */
+                content: '';
+                position: absolute;
+                bottom: -38px;
+                left: 25%;
+                transform: translateX(-50%);
+                /* width: 3px; */
+                /* height: 31px; */
+                /* background: #9ce6ad; */
+                border: 14px solid #f4f4f4;
+                border-bottom-color: transparent;
+                border-left-color: transparent;
+                border-right-color: transparent;
+
+            }
+
+            .m-article .rgcontent:before {
+                content: '';
+                position: absolute;
+                bottom: 220px;
+                left: 25%;
+                transform: translateX(-50%);
+                border: 14px solid #21ba45;
+                border-top-color: transparent;
+                border-left-color: transparent;
+                border-right-color: transparent;
+            }
+
+            .m-article .lfcontent .description,
+            .m-article .rgcontent .description {
+                padding-right: 65px;
+            }
+
+        }
+
+        /* header */
+        header {
+            position: relative;
+            display: block;
+        }
+
+        .nav {
+            display: flex;
+            position: relative;
+            height: 80px;
+            width: 100%;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            background: #00b5ad;
+            margin-bottom: 20px;
+        }
+
+        .nav .back {
+            display: inline-block;
+            font-size: 1.5rem;
+        }
+
+        .nav .back  a {
+            color: #000;
+        }
+
+        .nav .back a:hover {
+            color: #FFFFFF;
+
+        }
+
+
+        .ui.action.input:not([class*="left action"]) input:focus {
+            border-color: transparent!important;
+        }
+
+        .nav .logo {
+            position: relative;
+            display: inline-block;
+            font-size: 1.5rem;
+            transition: all .3s;
+        }
+        .nav .logo:hover {
+            color: #f4f4f4;
+        }
+        .nav .logo:hover .labelMenu {
+            display: block;
+        }
+
+        .nav .logo .labelMenu a:hover {
+            color: #0b0b16;
+        }
+        .nav .logo .labelMenu {
+            display: none;
+            position: absolute;
+            top: 16px;
+            left: 0;
+            font-size: 1rem;
+            color: whitesmoke;
+            z-index: 2;
+            background: rgba(0, 0, 0, 0);
+        }
+        .nav .logo .labelMenu li {
+            margin-top: 10px;
+            width: 100px;
+        }
+
+        @media all and (max-width: 48em) {
+            .nav .logo  {
+                display: none;
+            }
+        }
+
+
+    </style>
+
+
+</head>
+
+
+<body>
+
+    <header>
+        <nav class="nav">
+            <div class="back">
+                <a href="/">
+                    <i class="icon left arrow"></i>
+                </a>
+            </div>
+            <div class="ui input action search">
+                <input type="text" placeholder="Search...">
+                <button class="ui icon button">
+                    <i class="icon search"></i>
+                </button>
+            </div>
+            <div class="logo">
+                <i class="icon grid layout"></i>
+                <div class="labelMenu">
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <div class="ui green label">
+                                    <i class="mail icon"></i>HTML
+                                </div>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                <div class="ui yellow label">
+                                    <i class="mail icon"></i> CSS
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="ui pink label">
+                                    <i class="mail icon"></i> JavaScipt
+                                </div>
+                            </a>
+
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="ui blue label">
+                                    <i class="mail icon"></i> NodeJS
+                                </div>
+                            </a>
+
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="ui purple label">
+                                    <i class="mail icon"></i> MongoDB
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section>
+
+
+
+        <!-- 文章模块 -->
+        <div class="m-article">
+            <div class="ui stackable grid container">
+                <!-- left -->
+                <div class=" tow column row ">
+                    <div class="eight wide column">
+
+                        <div class="wrap">
+                            <div class="lfcontent">
+                                <div class="title">Hello World!</div>
+                                <div class="date">GitHub.DearSW</div>
+                                <div class="description">
+                                    222222222222222222222
+                                    222222222222222222222
+                                    222222222222222222222
+                                    222222222222222222222
+                                    222222222222222222222
+                                </div>
+                                <button class="showmr">Show More</button>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="eight wide column">
+
+                            <div class="rgimg">
+                                <img src="../public/imgs/Mac.png" alt="Mac">
+                            </div>
+
+                    </div>
+                </div>
+
+                <!-- right -->
+                <div class="centered row ui segment">
+                    <div class="eight wide column">
+                            <div class="lfimg">
+                                <img src="../public/imgs/Mac.png" alt="Mac">
+                            </div>
+                    </div>
+                    <div class="eight wide column">
+
+
+                            <div class="wrap">
+                                <div class="rgcontent">
+                                        <div class="title">Hello World!</div>
+                                        <div class="date">GitHub.DearSW</div>
+                                        <div class="description">
+                                            222222222222222222222
+                                            222222222222222222222
+                                            222222222222222222222
+                                            222222222222222222222
+                                            222222222222222222222
+                                        </div>
+                                        <button class="showmr">Show More</button>
+                                </div>
+                            </div>
+
+                    </div>
+                </div>
+
+
+                <% console.log('hello, i am a article web!'); %>
+
+                <!-- 定义一个循环 ,取出 posts 里面的所有数据-->
+                <!-- 1 -->
+                <% for( var i = 0, l = posts.length; i < l - 2; i++) { %>
+                <% var shortStr = posts[i].post.subString(0,30); %>
+                <% var shortStr2 = posts[i+1].post.subString(0,30); %>
+
+                <div class=" tow column row ">
+                    <div class="eight wide column">
+
+                        <div class="wrap">
+                            <div class="lfcontent">
+                                <div class="title"><%= posts[i].title %></div>
+                                <div class="date">GitHub.DearSW</div>
+                                <div class="description">
+                                    <%= shortStr %>
+                                </div>
+                                <button id="m<% i %>" class="showmr">Show More</button>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="eight wide column">
+
+                        <div class="rgimg">
+                            <img src="../public/imgs/Mac.png" alt="Mac">
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="ui  m<% i %> modal">
+                    <i class="close icon"></i>
+                    <div class="header">
+                        Profile Picture
+                    </div>
+                    <div class="image content">
+                        <div class="ui medium image">
+                            <img src="../public/imgs/Mac.png">
+                        </div>
+                        <div class="description">
+                            <div class="ui header">
+                                <%= posts[i].title %>
+                            </div>
+                            <p><%= posts[i].post %></p>
+                        </div>
+                    </div>
+                    <div class="actions">
+                        <div class="ui positive right labeled icon button">
+                            Close
+                            <i class="checkmark icon"></i>
+                        </div>
+                    </div>
+                </div>
+                <!-- 2 ------------------------------------------>
+                <div class="centered row ui segment">
+
+
+                    <div class="eight wide column">
+                        <div class="lfimg">
+                            <img src="../public/imgs/Mac.png" alt="Mac">
+                        </div>
+                    </div>
+
+
+                    <div class="eight wide column">
+
+
+                        <div class="wrap">
+                            <div class="rgcontent">
+                                <div class="title"><%= posts[i+1].title %></div>
+                                <div class="date">GitHub.DearSW</div>
+                                <div class="description">
+                                    <%= shortStr2 %>
+                                </div>
+                                <button id="m<% i+1 %>" class="showmr">Show More</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="ui  m<% i + 1 %> modal">
+                    <i class="close icon"></i>
+                    <div class="header">
+                        Profile Picture
+                    </div>
+                    <div class="image content">
+                        <div class="ui medium image">
+                            <img src="../public/imgs/Mac.png">
+                        </div>
+                        <div class="description">
+                            <div class="ui header">
+                                <%= posts[i+1].title %>
+                            </div>
+                            <p><%= posts[i+1].post %></p>
+                        </div>
+                    </div>
+                    <div class="actions">
+                        <div class="ui positive right labeled icon button">
+                            Close
+                            <i class="checkmark icon"></i>
+                        </div>
+                    </div>
+                </div>
+
+             <% } %>
+                <!--end-->
+            </div>
+
+        </div>
+
+
+    </section>
+
+    <footer>
+        <nav>
+
+        </nav>
+    </footer>
+
+
+
+
+
+    <!--  引入 jquery3.0 -->
+    <script src="../public/lib/jquery/jquery.min.js"></script>
+    <!-- semantic UI 引入 -->
+    <script src="../public/css/semantic/dist/semantic.min.js"></script>
+
+    <script>
+
+        $(function () {
+            $('.ui.modal').each(function (index, element) {
+                var s = "m" + index;
+                $('.ui.s.modal')
+                        .modal('setting', 'transition', 'Fade Up')
+                        .modal({blurring: true})
+                        .modal('attach events', '#' + s, 'show');
+            });
+
+            console.log('hello');
+        })
+
+    </script>
+
+
+</body>
+</html>

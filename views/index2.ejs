@@ -99,6 +99,17 @@
     <!--  引入 jquery3.0 -->
 
     <script src="../public/lib/jquery/jquery.min.js"></script>
+    <!-- loader JS -->
+    <script src="../public/js/components/loader.js"></script>
+    <script>
+        $(window).load(
+                setTimeout(function(){
+                    $('body').addClass('loaded');
+                    $('#loader-wrapper .load_title').remove();
+                    $('#loader-wrapper canvas').remove();
+                },4000)
+        );
+    </script>
 
     <script>
         $(function () {
