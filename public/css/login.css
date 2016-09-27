@@ -5,12 +5,8 @@
  * login-1 组件块
  */
 
-/*header*/
-.progress-line {
-    width: 100%;
-    height: 5px;
-    background: #6d99bf;
-}
+
+
 
 
 /*#content*/
@@ -136,6 +132,18 @@
     height: 37px;
     padding: 5px 10px;
     border-top: 0;
+    border-bottom: 1px solid rgba(158, 158, 158, 0.32);
+}
+
+.signInform .group-inputs input[type = "password"] {
+    border-bottom: 0;
+}
+
+.group-inputs input[type = "email"] {
+    width: 278px;
+    height: 37px;
+    padding: 5px 10px;
+    border-top: 0;
 }
 
 
@@ -144,7 +152,7 @@
     margin-top: 18px;
 
 }
-.btn button {
+.btn input {
     width: 300px;
     height: 39px;
     padding: 0;
@@ -155,7 +163,7 @@
     line-height: 39px;
     color: #fff;
 }
-.btn button:hover {
+.btn input:hover {
     background: #55abed;
 }
 

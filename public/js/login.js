@@ -3,22 +3,13 @@
  */
 
 //实现登录交互功能；
-//原生实现一遍，JQ实现一遍；
 
 //*************原生JS
 
 (function () {
     //第一导航处
 
-        //var registerBtn = document.querySelector("#register");
-        //var loginBtn = document.querySelector("#login");
-        //
-        //loginBtn.onclick = function (e) {
-        //    e.target.classList.toggle("active");
-        //};
-        //registerBtn.onclick = function (e) {
-        //    e.target.classList.toggle("active");
-        //}
+
     var parentBtn = document.querySelector(".tab-nav-center");
     var btn = parentBtn.querySelectorAll("a");
     var show_line = parentBtn.nextElementSibling;

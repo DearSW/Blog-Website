@@ -1,10 +1,13 @@
+
+
+// 数据库 对象
 var mongodb = require("./db");
 
 function User(user) {
 	this.name = user.name;
 	this.password = user.password;
 	this.email = user.email;
-};
+}
 
 // 关键语句
 module.exports = User;
