@@ -1,9 +1,60 @@
+
+
+
+<!-- register -->
+
+
 <%- include backend_header %>
-<form method="post">
-  用户名：  <input type="text" name="name"/><br />
-  密码：    <input type="password" name="password"/><br />
-  确认密码：<input type="password" name="password-repeat"/><br />
-  邮箱：    <input type="email" name="email"/><br />
-  <input type="submit" value="注册"/>
-</form>
-<%- include backend-footer %>
+
+
+
+
+            <!--<form method="post">
+                  用户名：  <input type="text" name="name"/><br />
+                  密码：    <input type="password" name="password"/><br />
+                  确认密码：<input type="password" name="password-repeat"/><br />
+                  邮箱：    <input type="email" name="email"/><br />
+                  <input type="submit" value="注册"/>
+            </form>-->
+
+            <form class="ui form" method="post">
+
+                    <div class="seven wide field">
+                        <input type="text" name="name" placeholder="用户名" required>
+                    </div>
+
+                    <div class="seven wide field">
+                        <input type="password" name="password" placeholder="密码" required>
+                    </div>
+
+                    <div class="seven wide field">
+                        <input type="password" name="password-repeat" placeholder="再次输入密码" required>
+                    </div>
+
+                    <div class="seven wide field">
+                        <input type="email" name="email" placeholder="Email" required>
+                    </div>
+
+                    <div class="seven wide field">
+                        <div class="ui fluid buttons">
+                            <input class="ui positive button" type="submit" value="注册">
+                            <div class="or"></div>
+                            <input class="ui positive button" type="reset" value="重置">
+                        </div>
+                    </div>
+
+            </form>
+
+
+        </article>
+    </div>
+    <!-- right center end -->
+
+<!--  引入 jquery3.0 -->
+<script src="../public/lib/jquery/jquery.min.js"></script>
+<!-- semantic UI 引入 -->
+<script src="../public/css/semantic/dist/semantic.min.js"></script>
+
+
+</body>
+</html>

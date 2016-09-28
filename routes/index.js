@@ -195,7 +195,7 @@ module.exports = function(app) {
 
             // 响应信息的渲染,第一个参数为ejs页面模版,第二个为传入这个模版的参数,一段json数据;
             res.render('backend_index', {
-                title: '主页',
+                title: '概览',
                 posts: posts,
                 page: page,
                 isFirstPage: (page - 1) == 0,

@@ -1,9 +1,37 @@
+
+
+
+
+<!-- 发表文章 -->
+
+
+
 <%- include backend_header %>
-<form method="post">
-  标题：<br />
-  <input type="text" name="title" /><br />
-  正文：<br />
-  <textarea name="post" rows="20" cols="100"></textarea><br />
-  <input type="submit" value="发表" />
-</form>
-<%- include backend-footer %>
+
+        <!--<form method="post">
+          标题：<br />
+          <input type="text" name="title" /><br />
+          正文：<br />
+          <textarea name="post" rows="20" cols="100"></textarea><br />
+          <input type="submit" value="发表" />
+        </form>-->
+
+        <form method="post">
+            <div class="ui labeled input">
+                <div class="ui label">
+                    标题:
+                </div>
+                <input type="text" name="title">
+            </div>
+
+            <div class="postcontent">
+                <textarea name="post"  cols="100" rows="20" placeholder="请输入文章,支持Markdown格式"></textarea>
+            </div>
+
+            <div class="submitbtn">
+                <input type="submit" value="提交">
+            </div>
+
+        </form>
+
+<%- include backend_footer %>

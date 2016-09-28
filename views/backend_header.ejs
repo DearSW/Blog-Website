@@ -1,37 +1,147 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Blog</title>
+  <meta charset="UTF-8">
+  <title>BackEnd</title>
+  <meta http-equiv="x-ua-compatible" content="IE=edge,chrome=1">
+
+  <!-- SEO -->
+  <meta name="keywords" content="DearSW">
+  <meta name="author" content="DearSW">
+  <meta name="description" content="DearSW">
+
+  <!--IE兼容模式，优先使用最新版的IE和Chrome内核-->
+  <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge,chrome=1" />
+
+  <!--强制优先使用360webkit内核-->
+  <meta name="renderer" content="webkit" />
+
+  <!--为移动端设备优化，设置看见区域的宽度和初始缩放比例-->
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- icon图标 -->
+  <link rel="short icon" type="image/icon" href="../public/imgs/icon/icon.jpg">
+
+
+  <!-- 初始化样式 -->
+  <link rel="stylesheet" href="../public/css/normalize.css">
+  <link rel="stylesheet" href="../public/css/normalizeForDearSW.css">
+
+  <!-- semantic UI 引入 -->
+  <link rel="stylesheet" href="../public/css/semantic/dist/semantic.min.css">
+
+  <!-- 后台样式引入 -->
   <link rel="stylesheet" href="../public/css/backend.css">
+
+
+
 </head>
 <body>
 
-<header>
-  <h1><%= title %></h1>
-</header>
 
-<nav>
-  <span><a title="主页" href="/">home</a></span>
-  <span><a title="存档" href="/archive">archive</a></span>
-  <span><a title="标签" href="/tags">tags</a></span>
-  <span><a title="友情链接" href="/links">links</a></span>
-  <% if (user) { %>
-  <span><a title="上传" href="/upload">upload</a></span>
-  <span><a title="发表" href="/post">post</a></span>
-  <span><a title="登出" href="/logout">logout</a></span>
-  <% } else { %>
-  <span><a title="登录" href="/login">login</a></span>
-  <span><a title="注册" href="/reg">register</a></span>
-  <% } %>
-  <span><form action="/search" method="GET"><input type="text" name="keyword" placeholder="SEARCH" class="search" /></form></span>
-</nav>
+<!------------------------- left ------------------------->
+<div class="m-leftmenu">
+  <div class="logo">
+    <i class="icon pied piper alternate big"></i>
+  </div>
+  <nav>
 
-<article>
+      <div class="ui vertical menu">
 
-  <% if (success) { %>
-  <div><%= success %></div>
-  <% } %>
-  <% if (error) { %>
-  <div><%= error %> </div>
-<% } %>
+          <a title="主页" href="/" class="item">
+              主页
+              <i class="icon home"></i>
+          </a>
+          <a title="概览" href="/backend" class="item">
+              概览
+              <i class="icon server"></i>
+          </a>
+          <a title="存档" href="/archive" class="item">
+              Archive
+              <i class="icon suitcase"></i>
+          </a>
+          <a title="标签" href="/tags" class="item">
+              Tags
+              <i class="icon tags"></i>
+          </a>
+          <a title="友情链接" href="/links" class="item">
+              Links
+              <i class="icon external share"></i>
+          </a>
+          <% if (user) { %>
+          <a title="上传" href="/upload" class="item">
+              Upload
+              <i class="icon upload"></i>
+          </a>
+          <a title="发表" href="/post" class="item">
+              Post
+              <i class="icon laptop"></i>
+          </a>
+          <a title="登出" href="/logout" class="item">
+              注销
+              <i class="icon sign out"></i>
+          </a>
+          <% } else { %>
+          <a title="注册" href="/reg" class="item">
+              Register
+              <i class="icon add user"></i>
+          </a>
+          <a title="登录" href="/login" class="item">
+              Login
+              <i class="icon sign in"></i>
+          </a>
+          <% } %>
+      </div>
+  </nav>
+
+  <div class="articlesearch">
+    <form action="/search" method="GET">
+      <div class="ui search">
+        <div class="ui icon input">
+          <input class="prompt" type="text" name="keyword" placeholder="Article search...">
+          <i class="icon search"></i>
+        </div>
+        <div class="results"></div>
+      </div>
+    </form>
+  </div>
+
+</div>
+
+
+<!------------- right top ------------------>
+<div class="m-righttop">
+
+
+  <div class="title">
+    <div class="ui red tag label">
+      <%= title %>
+    </div>
+  </div>
+
+  <div class="message">
+    <% if (success) { %>
+    <div><%= success %></div>
+    <% } %>
+    <% if (error) { %>
+    <div><%= error %> </div>
+    <% } %>
+  </div>
+
+  <div class="tx">
+      <% if(user) { %>
+        <img class="ui avatar image" src="http://odfgqiz57.bkt.clouddn.com/images/avadar.png" alt="已登录">
+      <% } else { %>
+        <img class="ui avatar image" src="data:image/jpg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD//gA7Q1JFQVRPUjogZ2QtanBlZyB2MS4wICh1c2luZyBJSkcgSlBFRyB2ODApLCBxdWFsaXR5ID0gOTAK/9sAQwADAgIDAgIDAwMDBAMDBAUIBQUEBAUKBwcGCAwKDAwLCgsLDQ4SEA0OEQ4LCxAWEBETFBUVFQwPFxgWFBgSFBUU/9sAQwEDBAQFBAUJBQUJFA0LDRQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQU/8AAEQgAUABQAwEiAAIRAQMRAf/EAB8AAAEFAQEBAQEBAAAAAAAAAAABAgMEBQYHCAkKC//EALUQAAIBAwMCBAMFBQQEAAABfQECAwAEEQUSITFBBhNRYQcicRQygZGhCCNCscEVUtHwJDNicoIJChYXGBkaJSYnKCkqNDU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6g4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29/j5+v/EAB8BAAMBAQEBAQEBAQEAAAAAAAABAgMEBQYHCAkKC//EALURAAIBAgQEAwQHBQQEAAECdwABAgMRBAUhMQYSQVEHYXETIjKBCBRCkaGxwQkjM1LwFWJy0QoWJDThJfEXGBkaJicoKSo1Njc4OTpDREVGR0hJSlNUVVZXWFlaY2RlZmdoaWpzdHV2d3h5eoKDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uLj5OXm5+jp6vLz9PX29/j5+v/aAAwDAQACEQMRAD8A+t+KKPxo/GgA70Yo/Gj8aADFH4VesdC1HUl3WtjcXCf344yV/PGKW+0HUtNXddWNzbp/fkjIX88YoAofhR+FH40fjQAfhR+FH40fjQAUUUUAFepeAPh5D9li1LVYhK8g3Q27j5VXszDuT6f5HA+FtOXVvEWn2rjMcko3j1UckfkDX0MBgYHAoARVCKFUBVHAA6ClZQwKkZBGCDS0UAec+Pvh3BJay6lpUQimjBeW3QYVx3Kjsfbv/PyqvpuvnvxfpqaT4l1C1QbY0lJUDsrfMB+RoAyKKKKACiiigDa8GXq6f4p02eQgIJQpJ7Bvlz+tfQP4V8yDg17P4A8cw65ZxWV5IE1KMbfmP+uA7j39R+NAHaUfhSUUAL+FeA+OL1NQ8WalNGQU83YCO+0Bf6V6b498cQ6BZyWlrIJNSkXaApz5QP8AEff0FeKk5OTyTQAUUUUAH40fjRU1naTX93DbQIXmlYIijuTQBc0Dw/eeI74W1mm49XkbhUHqTXsHhz4eaXoCpI8YvbscmaYZAP8Asr0H8/etHwv4cg8M6XHaxANIfmllxy7dz9PStigA/Gk/GlooA5bxJ8PdL19XkWMWd43PnwjGT/tL0P8AP3rx/X/D954cvjbXibT1SReVceoNfRFZHijw5B4m0uS1lAWQfNFLjlG7H6etAHz5+NH41NeWk1hdzW06FJonKMp7EGoaACvQfhBowudTudRkXK2y7I8j+Nup/Afzrz6vafhRaCDwmkgHM8zufwO3/wBloA7Kiij8KACkpaSgBaSj8KKAPJvi/owttTttRjXC3K7JMf3l6H8R/KvPq9p+K1qJ/CbyEcwTI4P1O3/2avFqAP/Z" alt="未登录">
+      <% } %>
+  </div>
+
+</div>
+
+<!-------------- right center index ------------------>
+
+<div class="m-rightcenter">
+
+  <article>

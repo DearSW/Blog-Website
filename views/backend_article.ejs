@@ -1,0 +1,30 @@
+
+
+
+
+
+<%- include backend_header %>
+
+<% posts.forEach(function(post, index) { %>
+    <p><h2><a href="/articleSearch/<%= post.title %>"><%= post.title %></a></h2></p>
+
+    <p class="info">
+        作者：<a href="#"><%= post.name %></a> |
+        日期：<%= post.time.minute %>
+    </p>
+
+<% if (user && (user.name == post.name)) { %>
+    <span><a class="edit" href="/edit/<%= post.title %>">编辑</a></span>
+<% } %>
+
+    <p><%- post.post.substr(0,10) %></p>
+
+    <br />
+
+    <h4>这是第<%= index + 1 %>篇</h4>
+    <hr />
+
+
+<% }) %>
+
+<%- include backend_footer %>
