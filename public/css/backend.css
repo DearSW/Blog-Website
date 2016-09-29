@@ -153,6 +153,28 @@ body {
 
 /************************* right center edit *************************/
 
+.m-rightcenter .cancelEdit {
+    position: absolute;
+    top: 22%;
+    right: 7%;
+    font-size: 1rem;
+}
+
+.m-rightcenter .cancelEdit button:hover {
+    background: #e50000;
+}
+
+.m-rightcenter .cancelEdit a {
+    color: #767676;
+}
+
+.m-rightcenter .cancelEdit a:hover {
+    color: snow;
+}
+
+
+
+
 
 
 
