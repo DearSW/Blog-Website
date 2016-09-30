@@ -37,12 +37,14 @@
         </div>
 
         <div class="postcontent">
-            <textarea name="post"  cols="100" rows="20" placeholder="请输入文章,支持Markdown格式">
-                <%= post.post %>
-            </textarea>
+            <div id="epiceditor">
+                <textarea name="post"  cols="100" rows="20" placeholder="请输入文章,支持Markdown格式">
+                    <%= post.post %>
+                </textarea>
+            </div>
         </div>
 
-        <div class="submitbtn">
+        <div class="postbtn">
             <input type="submit" value="更新">
         </div>
 

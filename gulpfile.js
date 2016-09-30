@@ -20,8 +20,6 @@ const cssmin = require('gulp-cssmin'); // 压缩CSS文件
 const less = require('gulp-less'); // 编译less
 const path = require('path'); // 系统路径
 
-
-//var cleanCSS = require('gulp-clean-css');
 //var htmlmin = require('gulp-htmlmin');
 
 const imagemin = require('gulp-imagemin'); // 压缩图片
@@ -55,9 +53,47 @@ gulp.task('less', function () {
         .pipe(gulp.dest('./public/css'));
 });
 
-// 压缩图片
+/*// 压缩图片
 gulp.task('default', function() {
-    gulp.src('public/src/imgs/*')
+    gulp.src('public/src/imgs/!*')
         .pipe(imagemin())
         .pipe(gulp.dest('public/dist/imgs'))
+});*/
+
+
+// 压缩和重命名JS文件
+gulp.task('script1', function() {
+    gulp.src('public/js/')
+        .pipe(uglify())
+        .pipe(rename(function (path) {
+            path.extname = '.min.js'; // 这里忘记在min前面加上一个点号啦,导致命名失败;
+        }))
+        .pipe(gulp.dest('public/js'));
 });
+
+gulp.task('script2', function() {
+    gulp.src('public/js/components')
+        .pipe(uglify())
+        .pipe(rename(function (path) {
+            path.extname = '.min.js'; // 这里忘记在min前面加上一个点号啦,导致命名失败;
+        }))
+        .pipe(gulp.dest('public/js/components'));
+});
+
+
+// 压缩和重命名CSS文件
+gulp.task('css', function() {
+    gulp.src('public/css/components/*.css')
+        .pipe(cleanCSS())
+        .pipe(cssmin('*.min.css'))
+        .pipe(gulp.dest('public/css/components'));
+});
+
+
+gulp.task('default', ['script1','script2','css']);
+
+
+
+
+
+

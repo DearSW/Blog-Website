@@ -16,22 +16,86 @@
           <input type="submit" value="发表" />
         </form>-->
 
-        <form method="post">
-            <div class="ui labeled input">
-                <div class="ui label">
-                    标题:
+            <form method="post">
+
+                <div class="postarticletitle">
+                    <div class="ui labeled input">
+                        <div class="ui label">
+                            标题:
+                        </div>
+                        <input type="text" name="title">
+                    </div>
                 </div>
-                <input type="text" name="title">
-            </div>
 
-            <div class="postcontent">
-                <textarea name="post"  cols="100" rows="20" placeholder="请输入文章,支持Markdown格式"></textarea>
-            </div>
 
-            <div class="submitbtn">
-                <input type="submit" value="保存">
-            </div>
+                <div class="postcontent">
+                    <div id="epiceditor">
+                        <textarea id="textcontent" name="post"  placeholder="请在下面输入文章,支持Markdown格式" disabled></textarea>
+                    </div>
+                </div>
 
-        </form>
+                <div class="postbtn">
+                    <input type="submit" value="保存">
+                </div>
 
-<%- include backend_footer %>
+            </form>
+
+        </article>
+    </div>
+
+    <script src="../public/lib/epiceditor/js/epiceditor.min.js"></script>
+    <script>
+
+        (function (window) {
+
+            'usr strict';
+
+            var opts = {
+                container: 'epiceditor',
+                textarea: 'textcontent',
+                basePath: '../public/lib/epiceditor',
+                clientSideStorage: true,
+                localStorageName: 'epiceditor',
+                useNativeFullscreen: true,
+                parser: marked,
+                file: {
+                    name: 'epiceditor',
+                    defaultContent: '',
+                    autoSave: 100
+                },
+                theme: {
+                    base: '/themes/base/epiceditor.css',
+                    preview: '/themes/preview/github.css',
+                    editor: '/themes/editor/epic-dark.css'
+                },
+                button: {
+                    preview: true,
+                    fullscreen: true,
+                    bar: "auto"
+                },
+                focusOnLoad: false,
+                shortcut: {
+                    modifier: 18,
+                    fullscreen: 70,
+                    preview: 80
+                },
+                string: {
+                    togglePreview: 'Toggle Preview Mode',
+                    toggleEdit: 'Toggle Edit Mode',
+                    toggleFullscreen: 'Enter Fullscreen'
+                },
+                autogrow: false
+            };
+
+            var editor = new EpicEditor(opts).load();
+
+
+
+        })(window);
+
+
+    </script>
+
+
+</body>
+</html>
