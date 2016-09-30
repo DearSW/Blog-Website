@@ -10,10 +10,10 @@
 // 引入模块
 
 const gulp = require('gulp'); // 引入gulp自动化构建工具
-const sass = require('gulp-sass'); // 编译Sass
+// const sass = require('gulp-sass'); // 编译Sass
 const rename = require('gulp-rename'); //  重命名插件
 const uglify = require('gulp-uglify'); // gulp的JS压缩插件,为混淆压缩
-const babel = require('gulp-babel'); // gulp的ES6的编译插件
+// const babel = require('gulp-babel'); // gulp的ES6的编译插件
 
 const cssmin = require('gulp-cssmin'); // 压缩CSS文件
 
@@ -63,34 +63,37 @@ gulp.task('default', function() {
 
 // 压缩和重命名JS文件
 gulp.task('script1', function() {
-    gulp.src('public/js/')
+    gulp.src('public/js/*js')
         .pipe(uglify())
-        .pipe(rename(function (path) {
-            path.extname = '.min.js'; // 这里忘记在min前面加上一个点号啦,导致命名失败;
-        }))
+        .pipe(rename({suffix: '.min'}))
         .pipe(gulp.dest('public/js'));
 });
 
 gulp.task('script2', function() {
-    gulp.src('public/js/components')
+    gulp.src('public/js/components/*.js')
         .pipe(uglify())
-        .pipe(rename(function (path) {
-            path.extname = '.min.js'; // 这里忘记在min前面加上一个点号啦,导致命名失败;
-        }))
+        .pipe(rename({suffix: '.min'}))
         .pipe(gulp.dest('public/js/components'));
 });
 
 
 // 压缩和重命名CSS文件
-gulp.task('css', function() {
+gulp.task('css1', function() {
     gulp.src('public/css/components/*.css')
-        .pipe(cleanCSS())
-        .pipe(cssmin('*.min.css'))
+        .pipe(cssmin())
+        .pipe(rename({suffix: '.min'}))
         .pipe(gulp.dest('public/css/components'));
 });
 
+gulp.task('css2', function() {
+    gulp.src('public/css/*.css')
+        .pipe(cssmin())
+        .pipe(rename({suffix: '.min'}))
+        .pipe(gulp.dest('public/css/'));
+});
 
-gulp.task('default', ['script1','script2','css']);
+// 组合任务
+gulp.task('default', ['script1','script2','css1','css2']);
 
 
 
