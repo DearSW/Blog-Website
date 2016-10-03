@@ -1,10 +1,5 @@
 
-
-
 <!-- 主页头部 用在index2上 -->
-
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -29,7 +24,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     <!-- icon图标 -->
-    <link rel="short icon" type="image/icon" href="../public/imgs/icon/icon.jpg">
+    <link rel="short icon" type="image/icon" href="../public/imgs/icon/logo1.png">
 
 
     <!-- 初始化样式 -->
@@ -58,16 +53,16 @@
 
         /* m-topmenu */
 
-        .m-topmenu {
+        /*.m-topmenu {
             position: relative;
             margin-left: 80px;
             width: calc(100% - 80px);
             height: 57px;
             z-index: 5;
-            /* 父层叠 */
+            !* 父层叠 *!
         }
 
-        /* 制作按钮 */
+        !* 制作按钮 *!
         .m-topmenu .btn {
             position: relative;
             display: inline-block;
@@ -102,7 +97,7 @@
             height: 2px;
             background-color: #000;
             transition: all .3s ease;
-            /* 向上移动 */
+            !* 向上移动 *!
             transform: translate(0,-6px);
         }
         .m-topmenu .btn .btn-lines:after {
@@ -116,7 +111,7 @@
             height: 2px;
             background-color: #000;
             transition: all .3s ease;
-            /* 向下移动 */
+            !* 向下移动 *!
             transform: translate(0,6px);
         }
 
@@ -133,7 +128,7 @@
             transform: rotate(-45deg);
             background-color: #FFFBFB;
         }
-
+*/
 
         /* 出现问题, m-topmenu and m-lfmenu 出现了层叠的问题,由于 m-lfmenu 后出现且覆盖了
            整个屏幕,导致了什么问题?导致注册在 m-topmenu 上的点击事件无法点击了,也就被 m-lfmenu 挡住了,
@@ -141,6 +136,7 @@
 
         /* m-lfmenu 模块化代码走起 */
 
+        /* A面 */
         .m-lfmenu {
             position: fixed;
             top: 0;
@@ -154,7 +150,6 @@
         }
 
 
-        /* A面 */
         .m-lfmenu .band {
             position: absolute;
             top: 0;
@@ -216,7 +211,7 @@
             position: absolute;
             top: 22px;
             font-size: 18px;
-            left: 18px;
+            left: 7px;
             color: rgba(0,0,0,.95);
             transition: left .3s;
         }
@@ -261,8 +256,8 @@
         }
 
 
-        /* B面 */
-        .m-lfmenu .B {
+        /* A_B 面 */
+        .m-lfmenu .A_B {
             display: none;
             position: absolute;
             top: 0;
@@ -280,14 +275,6 @@
             animation: changeB_a .5s;
         }
 
-        @keyframes changeB {
-            0% {
-                display: none;
-            }
-            100% {
-                display: block;
-            }
-        }
 
         @keyframes changeB_a {
             0% {
@@ -298,20 +285,33 @@
             }
         }
 
-        .m-lfmenu .B a {
+        .m-lfmenu .A_B a {
             position: relative;
             height: 100%;
-            width: 20%;
+            width: 14%;
             background: transparent;
             display: inline-block;
             transition: transform .8s;
         }
 
-        .m-lfmenu .B a:hover {
+        @media all and (max-width: 48em) {
+            .m-lfmenu .A_B a {
+                position: relative;
+                height: 19%;
+                width: 100%;
+                background: transparent;
+                display: inline-block;
+                transition: transform .8s;
+            }
+
+
+        }
+
+        .m-lfmenu .A_B a:hover {
             transform: scale(1.2);
         }
             /* 文字描述 */
-        .m-lfmenu .B .dpt {
+        .m-lfmenu .A_B .dpt {
             position: absolute;
             top: 50%;
             left: 50%;
@@ -324,28 +324,54 @@
             -moz-osx-font-smoothing: grayscale;
             letter-spacing: 2px;
         }
+        @media all and (max-width: 48em) {
+            .m-lfmenu .A_B .dpt {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%);
+                font-size: 1rem;
+                color: white;
+                font-style: oblique;
+                font-weight: bold;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+                letter-spacing: 10px;
+            }
+        }
+
+
+        .m-lfmenu .A_B .resume {
+            position: relative;
+            height: 100%;
+            width: 30%;
+            background: #fafafa;
+            display: inline-block;
+            transition: transform .8s;
+        }
+
             /* 图片背景 */
-        .m-lfmenu .B .Bbg {
+        .m-lfmenu .A_B .Bbg {
             height: 100%;
             background-size: cover;
         }
-        .m-lfmenu .B .Bbg.one{
+        .m-lfmenu .A_B .Bbg.one{
             background: url("../public/imgs/Asset1.jpg");
             background-size: cover;
         }
-        .m-lfmenu .B .Bbg.two{
+        .m-lfmenu .A_B .Bbg.two{
             background: url("../public/imgs/Asset2.jpg");
             background-size: cover;
         }
-        .m-lfmenu .B .Bbg.three{
+        .m-lfmenu .A_B .Bbg.three{
             background: url("../public/imgs/Asset3.jpg");
             background-size: cover;
         }
-        .m-lfmenu .B .Bbg.four{
+        .m-lfmenu .A_B .Bbg.four{
             background: url("../public/imgs/Asset4.jpg");
             background-size: cover;
         }
-        .m-lfmenu .B .Bbg.five{
+        .m-lfmenu .A_B .Bbg.five{
             background: url("../public/imgs/Asset5.jpg");
             background-size: cover;
         }
@@ -365,284 +391,196 @@
 
         }
 
-        .m-rightArea .mac_video {
+        .m-rightArea .covervid-wrapper {
             position: absolute;
             top: 0;
             left: 0;
-            z-index: 2;
             width: 100%;
             height: 100%;
+            z-index: -1;
         }
 
-        .m-rightArea .mac_video video {
+        .m-rightArea .content {
             position: relative;
-            width: 50%;
-        }
-
-        /* .m-footer start */
-        .m-footer {
-            position: relative;
-            width: 100%;
-            height: 60px;
-            background: rgba(0, 0, 0, 0);
-            box-shadow: 0 10px 10px 10px rgba(0,0,0,.87);
-
-        }
-
-        /* 左边图标链接部分 */
-        .m-footer .left {
-            position: absolute;
-            top: 50%;
-            left: 30px;
-            transform: translateY(-50%);
-            font-size: 25px;
-        }
-
-        @media all and (max-width: 48em) {
-            .m-footer .left {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%);
-                font-size: 25px;
-            }
-        }
-
-        .m-footer .left a {
-            color: #000;
-        }
-
-        .m-footer .left i:first-child:hover {
-            color: #00ACED;
-        }
-
-        .m-footer .left i:hover {
-            color: red;
-        }
-        .m-footer .left i:last-child:hover {
-            color: #4bd169;
-        }
-
-
-
-        /* 中间链接部分 */
-        .m-footer .list {
-            /* 联系列表 */
-            display: table;
-            /* table 很神奇 */
             text-align: center;
-            font-size: 1rem;
-            padding-top: 10px;
-            margin: 0 auto;
-            line-height: 3;
-            font-style: oblique;
-            font-weight: 100;
         }
-
-        @media all and (max-width: 48em) {
-            .m-footer .list {
-                display: none;
-            }
-        }
-
-        .m-footer .list a {
-            display: inline-block;
-            color: #9090bd;
-        }
-
-        .m-footer .list a:hover {
-            color: #71beff;
-        }
-        .m-footer .list .concat {
-            display: inline-block;
-            margin: 0 5px;
-        }
-
-        ::selection {
-            background: #12c48b;
-            color: #fff;
-            text-shadow: none;
-        }
-
-        /* .m-footer end */
     </style>
+    <style>
 
+        /*.B header .m-topmenu {
+            margin-left: 0;
+            width: 100%;
+        }*/
+
+        .B header .m-rightArea {
+            margin-left: 0;
+            width: 100%;
+        }
+
+    </style>
 
 </head>
 <!--no-scroll 切换-->
 <body id="bodyToggle" class="no-scroll">
 
-<!-- loader -->
+    <!-- loader 加载首页动画 -->
 
-<div id="loader-wrapper">
-    <div class="loader-section section-left"></div>
-    <div class="loader-section section-right"></div>
-    <canvas width="400" height="200"> Waiting... </canvas>
-    <div class="load_title">
-        <span>DearSW loading...</span>
-        <br>
-        <span>V1.0</span>
+    <div id="loader-wrapper">
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+        <canvas width="400" height="200"> Waiting... </canvas>
+        <div class="load_title">
+            <span>DearSW loading...</span>
+            <br>
+            <span>V1.0</span>
+        </div>
     </div>
-</div>
 
 
-<!------------------------------------------------------------------>
-<!--背景制作-->
-<!--bg-paused 切换-->
-<div id="bgToggle" class="bg">
-    <!--1-->
-    <picture class="bg-position" style="background-image: url(../public/imgs/odient/odient-1-desktop.jpg);">
-        <source srcset="./images/odient/odient-1-desktop.jpg 1x, ./images/odient/odient-1-desktop-2x.jpg 2x" media="(min-width: 1024px)">
-        <source srcset="./images/odient/odient-1-tablet.jpg 1x, ./images/odient/odient-1-tablet-2x.jpg 2x" media="(min-width: 768px)">
-        <source srcset="./images/odient/odient-1-mobile.jpg 1x, ./images/odient/odient-1-mobile-2x.jpg 2x">
-    </picture>
-    <!--2-->
-    <div class="bg-animations">
-        <picture class="bg-position bg-animation bg-z1"  style="background-image: url(../public/imgs/odient/odient-1-desktop.jpg);">
+    <!------------------------------------------------------------------>
+
+
+    <!-- 动态背景 -->
+    <!--bg-paused 切换-->
+    <div id="bgToggle" class="bg">
+        <!--1-->
+        <picture class="bg-position" style="background-image: url(../public/imgs/odient/odient-1-desktop.jpg);">
             <source srcset="./images/odient/odient-1-desktop.jpg 1x, ./images/odient/odient-1-desktop-2x.jpg 2x" media="(min-width: 1024px)">
             <source srcset="./images/odient/odient-1-tablet.jpg 1x, ./images/odient/odient-1-tablet-2x.jpg 2x" media="(min-width: 768px)">
             <source srcset="./images/odient/odient-1-mobile.jpg 1x, ./images/odient/odient-1-mobile-2x.jpg 2x">
         </picture>
-        <picture class="bg-position bg-animation bg-z2"  style="background-image: url(../public/imgs/odient/odient-2-desktop.jpg);">
-            <source srcset="./images/odient/odient-2-desktop.jpg 1x, ./images/odient/odient-2-desktop-2x.jpg 2x" media="(min-width: 1024px)">
-            <source srcset="./images/odient/odient-2-tablet.jpg 1x, ./images/odient/2-tablet-2x.jpg 2x" media="(min-width: 768px)">
-            <source srcset="./images/odient/odient-2-mobile.jpg 1x, ./images/odient/odient-2-mobile-2x.jpg 2x">
-        </picture>
-        <picture class="bg-position bg-animation bg-z3" style="background-image: url(../public/imgs/odient/odient-3-desktop.jpg);">
-            <source srcset="./images/odient/odient-3-desktop.jpg 1x, ./images/odient/odient-3-desktop-2x.jpg 2x" media="(min-width: 1024px)">
-            <source srcset="./images/odient/odient-3-tablet.jpg 1x, ./images/odient/odient-3-tablet-2x.jpg 2x" media="(min-width: 768px)">
-            <source srcset="./images/odient/odient-3-mobile.jpg 1x, ./images/odient/odient-3-mobile-2x.jpg 2x">
-        </picture>
-    </div>
-</div>
-
-
-<!-----------------------header 开始------------------------------------------->
-<header id="header">
-
-    <!-- 最上面菜单栏 -->
-    <div id="topMenu">
-        <div class="m-topmenu">
-            <!--按钮 toggle 切换 btn-close添加在这里-->
-            <a id="btnToggle" class="btn btn-close" href="#" >
-                <div class="btn-lines"></div>
-            </a>
+        <!--2-->
+        <div class="bg-animations">
+            <picture class="bg-position bg-animation bg-z1"  style="background-image: url(../public/imgs/odient/odient-1-desktop.jpg);">
+                <source srcset="./images/odient/odient-1-desktop.jpg 1x, ./images/odient/odient-1-desktop-2x.jpg 2x" media="(min-width: 1024px)">
+                <source srcset="./images/odient/odient-1-tablet.jpg 1x, ./images/odient/odient-1-tablet-2x.jpg 2x" media="(min-width: 768px)">
+                <source srcset="./images/odient/odient-1-mobile.jpg 1x, ./images/odient/odient-1-mobile-2x.jpg 2x">
+            </picture>
+            <picture class="bg-position bg-animation bg-z2"  style="background-image: url(../public/imgs/odient/odient-2-desktop.jpg);">
+                <source srcset="./images/odient/odient-2-desktop.jpg 1x, ./images/odient/odient-2-desktop-2x.jpg 2x" media="(min-width: 1024px)">
+                <source srcset="./images/odient/odient-2-tablet.jpg 1x, ./images/odient/2-tablet-2x.jpg 2x" media="(min-width: 768px)">
+                <source srcset="./images/odient/odient-2-mobile.jpg 1x, ./images/odient/odient-2-mobile-2x.jpg 2x">
+            </picture>
+            <picture class="bg-position bg-animation bg-z3" style="background-image: url(../public/imgs/odient/odient-3-desktop.jpg);">
+                <source srcset="./images/odient/odient-3-desktop.jpg 1x, ./images/odient/odient-3-desktop-2x.jpg 2x" media="(min-width: 1024px)">
+                <source srcset="./images/odient/odient-3-tablet.jpg 1x, ./images/odient/odient-3-tablet-2x.jpg 2x" media="(min-width: 768px)">
+                <source srcset="./images/odient/odient-3-mobile.jpg 1x, ./images/odient/odient-3-mobile-2x.jpg 2x">
+            </picture>
         </div>
     </div>
 
 
-    <!-- 左侧菜单栏 -->
-    <div id="lfMenu">
-        <div class="m-lfmenu">
+    <!-----------------------header 开始------------------------------------------->
+    <header id="header">
 
-            <!-- 背景 -->
-            <div class="menubg">
-            </div>
-
-            <!-- 正面显示的菜单项 width:(80-100)-->
-            <div class="band">
-
-                <!-- microanimation -->
-                <div class="microanimation">
-
-                </div>
-
-                <!-- logo -->
-                <a href="#" class="logo">
-                    <i class="icon github big"></i>
+        <!-- 最上面菜单栏
+        <div id="topMenu">
+            <div class="m-topmenu">
+                &lt;!&ndash;按钮 toggle 切换 btn-close添加在这里&ndash;&gt;
+                <a id="btnToggle" class="btn btn-close" href="#" >
+                    <div class="btn-lines"></div>
                 </a>
-                <!-- right arrow opacity:(1-0)-->
-                <div class="rgarrow">
-                    <!--<i class="icon right arrow big"></i>-->
-                    <span>menu</span>
-                </div>
-
-                <!-- left arrow  opacity:(0-1)-->
-                <div class="lfarrow">
-                    <!--<i class="icon left arrow big"></i>-->
-                    <span>open</span>
-                </div>
-            </div>
-
-            <!-- 反面显示的菜单 -->
-            <div class="B">
-                <a href="/backend">
-                    <div class="Bbg one"></div>
-                    <div class="dpt">
-                        <p>BackEnd</p>
-                    </div>
-                </a>
-                <a href="/articles">
-                    <div class="Bbg two"></div>
-                    <div class="dpt">
-                        <p>文章</p>
-                    </div>
-                </a>
-                <a href="/blogs">
-                    <div class="Bbg three"></div>
-                    <div class="dpt">
-                        <p>资源</p>
-                    </div>
-                </a>
-                <a href="https://github.com/DearSW">
-                    <div class="Bbg four"></div>
-                    <div class="dpt">
-                        <p>GitHub</p>
-                    </div>
-                </a>
-                <a href="/about">
-                    <div class="Bbg five"></div>
-                    <div class="dpt">
-                        <p>About</p>
-                    </div>
-                </a>
-            </div>
-
-
-
-        </div>
-    </div>
-
-    <!-- 右侧菜单栏 -->
-    <div id="rgMenu">
-        <div class="m-rightArea">
-            <div class="mac_video">
-                <video class="video" autoplay="" loop="" src="../public/videos/uzik.mp4" ></video>
             </div>
         </div>
-    </div>
+-->
 
+        <!-- 左侧菜单栏 -->
+        <div id="lfMenu">
+            <div class="m-lfmenu">
 
-</header>
+                <!-- 背景 -->
+                <div class="menubg">
+                </div>
 
+                <!-- 正面显示的菜单项 width:(80-100)-->
+                <div class="band">
 
-<!--------------------------body 开始------------------------------------------------->
+                    <!-- microanimation -->
+                    <div class="microanimation">
 
-<!--主体-->
-<!--这里有一个切换，nav-fade-in-->
-<div id="contentToggle" class="hide">
-    <!--下面都是内容去域-->
+                    </div>
 
-    <!-- 消息提示区 -->
-    <div>
-        <div class="ui grid container">
-            <div class="one column row">
-                <div class="column">
+                    <!-- logo -->
+                    <a href="#" class="logo">
+                        <!--<i class="icon github big"></i>-->
+                        <img src="../public/imgs/icon/logo3.png" alt="WELCOME" width="70px" height="60px">
+                    </a>
+                    <!-- right arrow opacity:(1-0)-->
+                    <div class="rgarrow">
+                        <!--<i class="icon right arrow big"></i>-->
+                        <span>menu</span>
+                    </div>
 
-                    <h3 class="ui header aligned center">Message</h3>
-                    <div class="ui segment">
-                        <div>
-                            <!-- 传入的 req.flash().toString()参数-->
-                            <% if (success) { %>
-                            <p><%= success %></p>
-                            <% } %>
-                            <% if (error) { %>
-                            <p><%= error %></p>
-                            <% } %>
+                    <!-- left arrow  opacity:(0-1)-->
+                    <div class="lfarrow">
+                        <!--<i class="icon left arrow big"></i>-->
+                        <span>open</span>
+                    </div>
+                </div>
+
+                <!-- 反面显示的菜单 -->
+                <div class="A_B">
+                    <a href="/backend">
+                        <div class="Bbg one"></div>
+                        <div class="dpt">
+                            <p>BackEnd</p>
                         </div>
-
+                    </a>
+                    <a href="/articles">
+                        <div class="Bbg two"></div>
+                        <div class="dpt">
+                            <p>文章</p>
+                        </div>
+                    </a>
+                    <a href="/blogs">
+                        <div class="Bbg three"></div>
+                        <div class="dpt">
+                            <p>资源</p>
+                        </div>
+                    </a>
+                    <a href="https://github.com/DearSW">
+                        <div class="Bbg four"></div>
+                        <div class="dpt">
+                            <p>GitHub</p>
+                        </div>
+                    </a>
+                    <a href="/about">
+                        <div class="Bbg five"></div>
+                        <div class="dpt">
+                            <p>About</p>
+                        </div>
+                    </a>
+                    <div class="resume">
+                        
                     </div>
                 </div>
+
+
+
             </div>
         </div>
-    </div>
+
+        <!-- 右侧菜单栏 -->
+        <div id="rgMenu">
+            <div class="m-rightArea">
+                <!--<div class="mac_video">
+                    <video class="video" autoplay="" loop="" src="../public/videos/uzik.mp4" ></video>
+                </div>-->
+
+                <!-- 视频背景 -->
+                <div class="covervid-wrapper">
+                    <video class="covervid-video" autoplay loop poster="../public/imgs/office.jpg">
+                        <!--<source src="videos/video.webm" type="video/webm">-->
+                        <source src="http://odfgqiz57.bkt.clouddn.com/video/uzik.mp4" type="video/mp4">
+                        <source src="../public/videos/uzik.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="content">
+                    <h1>To be or not to be,that is a question!</h1>
+                </div>
+
+            </div>
+        </div>
+
+
+    </header>

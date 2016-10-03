@@ -1,0 +1,609 @@
+
+<!-- 主页头部 用在index2上 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DearSW</title>
+    <meta http-equiv="x-ua-compatible" content="IE=edge,chrome=1">
+
+    <!-- SEO -->
+    <meta name="keywords" content="DearSW">
+    <meta name="author" content="DearSW">
+    <meta name="description" content="DearSW">
+
+    <!--IE兼容模式，优先使用最新版的IE和Chrome内核-->
+    <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge,chrome=1" />
+
+    <!--强制优先使用360webkit内核-->
+    <meta name="renderer" content="webkit" />
+
+    <!--为移动端设备优化，设置看见区域的宽度和初始缩放比例-->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- icon图标 -->
+    <link rel="short icon" type="image/icon" href="../public/imgs/icon/logo1.png">
+
+
+    <!-- 初始化样式 -->
+    <link rel="stylesheet" href="../public/css/normalize.css">
+    <link rel="stylesheet" href="../public/css/normalizeForDearSW.css">
+
+    <!-- 组件样式 -->
+    <!-- 主页动态背景 -->
+    <link rel="stylesheet" href="../public/css/components/background-animation.css">
+
+    <!-- loader -->
+    <link rel="stylesheet" href="../public/css/components/loader.css">
+
+    <!-- 主页基础样式 -->
+    <link rel="stylesheet" href="../public/css/index2.css">
+
+
+    <!-- semantic UI 引入 -->
+    <link rel="stylesheet" href="../public/css/semantic/dist/semantic.min.css">
+
+
+    <style>
+        * { box-sizing: border-box; }
+
+        /* 出现问题, m-topmenu and m-lfmenu 出现了层叠的问题,由于 m-lfmenu 后出现且覆盖了
+           整个屏幕,导致了什么问题?导致注册在 m-topmenu 上的点击事件无法点击了,也就被 m-lfmenu 挡住了,
+           所以这时候,层叠就至关重要了 z-index */
+
+        /* m-lfmenu 模块化代码走起 */
+
+        /* A面 */
+        .m-lfmenu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            min-height: 100%;
+            height: 100%;
+            width: 100%;
+            z-index: 4;
+            /* 父层叠 */
+        }
+
+
+        .m-lfmenu .band {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: #fafafa;
+            min-height: 100%;
+            height: 100%;
+            width: 80px;
+            cursor: pointer;
+            border-right: 1px solid #f2f2f2;
+            overflow: hidden;
+            color: #000;
+            transform: translate3d(0,0,0);
+            transition: width .3s linear;
+            z-index: 5;
+            /* 子层叠 */
+        }
+
+        .m-lfmenu .band:hover {
+            width: 100px;
+        }
+
+        .m-lfmenu .band .microanimation {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: #d4d4d5;
+            opacity: 0;
+        }
+
+        .m-lfmenu .band .microanimation.animate {
+
+            animation: change .7s;
+        }
+        @keyframes change {
+            0% {
+                opacity: 1;
+                height: 0;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%);
+                /* 把动画定位到中心位置开始 */
+                width: 100%;
+            }
+            50% {
+                opacity: .6;
+            }
+            100% {
+                opacity: 0;
+                height: 100%;
+                width: 100%;
+                top: 0;
+                left: 0;
+            }
+        }
+
+
+        .m-lfmenu .band .logo {
+            position: absolute;
+            top: 22px;
+            font-size: 18px;
+            left: 7px;
+            color: rgba(0,0,0,.95);
+            transition: left .3s;
+        }
+
+        .m-lfmenu .band .rgarrow {
+            font-family: NeutraDisp-BoldAlt;
+            font-size: 10px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            letter-spacing: 2px;
+            position: absolute;
+            top: 50%;
+            left: 20px;
+            margin-top: -10px;
+            overflow: hidden;
+            height: 17px;
+            width: 41px;
+            transform: rotate(-90deg);
+            transition: opacity .3s;
+            z-index: 4;
+            /* 子层叠 */
+        }
+
+        .m-lfmenu .band .lfarrow {
+            font-family: NeutraDisp-BoldAlt;
+            font-size: 10px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            letter-spacing: 2px;
+            position: absolute;
+            right: 0;
+            top: 50%;
+            margin-top: -12px;
+            height: 17px;
+            width: 41px;
+            transform: rotate(-90deg);
+            will-change: opacity;
+            transition: opacity .3s .2s;
+            z-index: 4;
+            /* 子层叠 */
+            opacity: 0;
+        }
+
+
+        /* A_B 面 */
+        .m-lfmenu .A_B {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 80px;
+            right: 0;
+            width: calc(100% - 80px);
+            /* 让浏览器自动计算宽度,只要填好需要的长度表达式,在PC端基本兼容,但是移动端惨不忍睹 */
+            min-height: 100%;
+            height: 100%;
+            z-index: 4;
+            /* 子层叠 */
+            background: rgba(255, 255, 255, 0);
+            font-size: 0;
+            /* 主要为了解决inline-block之间那个1px的空隙的历史问题 */
+            animation: changeB_a .5s;
+        }
+
+
+        @keyframes changeB_a {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .m-lfmenu .A_B > a {
+            position: relative;
+            height: 100%;
+            width: 14%;
+            background: transparent;
+            display: inline-block;
+            transition: transform .8s;
+        }
+
+        @media all and (max-width: 48em) {
+            .m-lfmenu .A_B > a {
+                position: relative;
+                height: 19%;
+                width: 100%;
+                background: transparent;
+                display: inline-block;
+                transition: transform .8s;
+            }
+
+
+        }
+
+        .m-lfmenu .A_B > a:hover {
+            transform: scale(1.2);
+        }
+        /* 文字描述 */
+        .m-lfmenu .A_B .dpt {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%);
+            font-size: 2rem;
+            color: white;
+            font-style: oblique;
+            font-weight: 100;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            letter-spacing: 2px;
+        }
+        @media all and (max-width: 48em) {
+            .m-lfmenu .A_B .dpt {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%);
+                font-size: 1rem;
+                color: white;
+                font-style: oblique;
+                font-weight: bold;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+                letter-spacing: 10px;
+            }
+        }
+
+
+        .m-lfmenu .A_B .resume {
+            position: relative;
+            height: 100%;
+            width: 30%;
+            background: #fafafa;
+            display: inline-block;
+            transition: transform .8s;
+        }
+
+        .m-lfmenu .A_B .resume .maininfo {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%);
+            font-size: 1rem;
+            color: #060606;
+            font-style: oblique;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            letter-spacing: 2px;
+            margin-top: 35px;
+        }
+
+
+
+        /* 图片背景 */
+        .m-lfmenu .A_B .Bbg {
+            height: 100%;
+            background-size: cover;
+        }
+        .m-lfmenu .A_B .Bbg.one{
+            background: url("../public/imgs/Asset1.jpg");
+            background-size: cover;
+        }
+        .m-lfmenu .A_B .Bbg.two{
+            background: url("../public/imgs/Asset2.jpg");
+            background-size: cover;
+        }
+        .m-lfmenu .A_B .Bbg.three{
+            background: url("../public/imgs/Asset3.jpg");
+            background-size: cover;
+        }
+        .m-lfmenu .A_B .Bbg.four{
+            background: url("../public/imgs/Asset4.jpg");
+            background-size: cover;
+        }
+        .m-lfmenu .A_B .Bbg.five{
+            background: url("../public/imgs/Asset5.jpg");
+            background-size: cover;
+        }
+
+
+        /* m-rightArea */
+        .m-rightArea {
+            position: relative;
+            margin-left: 80px;
+            top: 0;
+            left: 0;
+            width: calc(100% - 80px);
+            height: 500px;
+            overflow: hidden;
+            z-index: 3;
+            margin-top: 57px;
+            /* 父层叠 */
+
+        }
+
+        .m-rightArea .covervid-wrapper {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .m-rightArea .content {
+            position: relative;
+            text-align: center;
+        }
+    </style>
+
+
+</head>
+<!--no-scroll 切换-->
+<body id="bodyToggle" class="no-scroll">
+
+<!-- loader 加载首页动画 -->
+
+<div id="loader-wrapper">
+    <div class="loader-section section-left"></div>
+    <div class="loader-section section-right"></div>
+    <canvas width="400" height="200"> Waiting... </canvas>
+    <div class="load_title">
+        <span>DearSW loading...</span>
+        <br>
+        <span>V1.0</span>
+    </div>
+</div>
+
+
+<!------------------------------------------------------------------>
+
+
+<!-- 动态背景 -->
+<!--bg-paused 切换-->
+<div id="bgToggle" class="bg">
+    <!--1-->
+    <picture class="bg-position" style="background-image: url(../public/imgs/odient/odient-1-desktop.jpg);">
+        <source srcset="./images/odient/odient-1-desktop.jpg 1x, ./images/odient/odient-1-desktop-2x.jpg 2x" media="(min-width: 1024px)">
+        <source srcset="./images/odient/odient-1-tablet.jpg 1x, ./images/odient/odient-1-tablet-2x.jpg 2x" media="(min-width: 768px)">
+        <source srcset="./images/odient/odient-1-mobile.jpg 1x, ./images/odient/odient-1-mobile-2x.jpg 2x">
+    </picture>
+    <!--2-->
+    <div class="bg-animations">
+        <picture class="bg-position bg-animation bg-z1"  style="background-image: url(../public/imgs/odient/odient-1-desktop.jpg);">
+            <source srcset="./images/odient/odient-1-desktop.jpg 1x, ./images/odient/odient-1-desktop-2x.jpg 2x" media="(min-width: 1024px)">
+            <source srcset="./images/odient/odient-1-tablet.jpg 1x, ./images/odient/odient-1-tablet-2x.jpg 2x" media="(min-width: 768px)">
+            <source srcset="./images/odient/odient-1-mobile.jpg 1x, ./images/odient/odient-1-mobile-2x.jpg 2x">
+        </picture>
+        <picture class="bg-position bg-animation bg-z2"  style="background-image: url(../public/imgs/odient/odient-2-desktop.jpg);">
+            <source srcset="./images/odient/odient-2-desktop.jpg 1x, ./images/odient/odient-2-desktop-2x.jpg 2x" media="(min-width: 1024px)">
+            <source srcset="./images/odient/odient-2-tablet.jpg 1x, ./images/odient/2-tablet-2x.jpg 2x" media="(min-width: 768px)">
+            <source srcset="./images/odient/odient-2-mobile.jpg 1x, ./images/odient/odient-2-mobile-2x.jpg 2x">
+        </picture>
+        <picture class="bg-position bg-animation bg-z3" style="background-image: url(../public/imgs/odient/odient-3-desktop.jpg);">
+            <source srcset="./images/odient/odient-3-desktop.jpg 1x, ./images/odient/odient-3-desktop-2x.jpg 2x" media="(min-width: 1024px)">
+            <source srcset="./images/odient/odient-3-tablet.jpg 1x, ./images/odient/odient-3-tablet-2x.jpg 2x" media="(min-width: 768px)">
+            <source srcset="./images/odient/odient-3-mobile.jpg 1x, ./images/odient/odient-3-mobile-2x.jpg 2x">
+        </picture>
+    </div>
+</div>
+
+
+<!-----------------------header 开始------------------------------------------->
+<header id="header">
+
+    <!-- 左侧菜单栏 -->
+    <div id="lfMenu">
+        <div class="m-lfmenu">
+
+            <!-- 背景 -->
+            <div class="menubg">
+            </div>
+
+            <!-- 正面显示的菜单项 width:(80-100)-->
+            <div class="band">
+
+                <!-- microanimation -->
+                <div class="microanimation">
+
+                </div>
+
+                <!-- logo -->
+                <a href="#" class="logo">
+                    <!--<i class="icon github big"></i>-->
+                    <img src="../public/imgs/icon/logo3.png" alt="WELCOME" width="70px" height="60px">
+                </a>
+                <!-- right arrow opacity:(1-0)-->
+                <div class="rgarrow">
+                    <!--<i class="icon right arrow big"></i>-->
+                    <span>menu</span>
+                </div>
+
+                <!-- left arrow  opacity:(0-1)-->
+                <div class="lfarrow">
+                    <!--<i class="icon left arrow big"></i>-->
+                    <span>open</span>
+                </div>
+            </div>
+
+            <!-- 反面显示的菜单 -->
+            <div class="A_B">
+                <a href="/backend">
+                    <div class="Bbg one"></div>
+                    <div class="dpt">
+                        <p>BackEnd</p>
+                    </div>
+                </a>
+                <a href="/articles">
+                    <div class="Bbg two"></div>
+                    <div class="dpt">
+                        <p>文章</p>
+                    </div>
+                </a>
+                <a href="/blogs">
+                    <div class="Bbg three"></div>
+                    <div class="dpt">
+                        <p>资源</p>
+                    </div>
+                </a>
+                <a href="https://github.com/DearSW">
+                    <div class="Bbg four"></div>
+                    <div class="dpt">
+                        <p>GitHub</p>
+                    </div>
+                </a>
+                <a href="/about">
+                    <div class="Bbg five"></div>
+                    <div class="dpt">
+                        <p>About</p>
+                    </div>
+                </a>
+                <div class="resume">
+                    <div class="maininfo">
+                        <p><img src="../public/imgs/avatar/elyse.png" alt="Me" width="50px" height="50px"></p>
+                        <p>Web Designer</p>
+                        <p><a href="/resume">Resume for DearSW</a></p>
+                        <hr />
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+
+    <!-- 右侧菜单栏 -->
+    <div id="rgMenu">
+        <div class="m-rightArea">
+
+            <!-- 视频背景 -->
+            <div class="covervid-wrapper">
+                <video class="covervid-video" autoplay loop poster="../public/imgs/office.jpg">
+                    <source src="http://odfgqiz57.bkt.clouddn.com/video/uzik.mp4" type="video/mp4">
+                    <source src="../public/videos/uzik.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="content">
+                <h1>To be or not to be,that is a question!</h1>
+            </div>
+
+        </div>
+    </div>
+
+
+</header>
+
+
+
+
+    <!--  引入 jquery3.0 -->
+    <script src="../public/lib/jquery/jquery.min.js"></script>
+
+    <!-- CoverVid -->
+    <script src="../public/lib/covervid.min.js"></script>
+
+    <!-- loader JS -->
+    <script src="../public/js/components/loader.js"></script>
+    <script>
+        $(window).load(
+                // 首屏加载优化代码
+                setTimeout(function(){
+                    $('body').addClass('loaded');
+                    $('#loader-wrapper .load_title').remove();
+                    $('#loader-wrapper canvas').remove();
+                },4000)
+        );
+    </script>
+
+    <script>
+        $(function () {
+
+            'usr strict';
+
+            // 获取头部,左侧栏的所有操作对象
+            var lfMenu = $('header .m-lfmenu');
+            var bands = $('header .band');//  A 面 lfMenu
+            var rgArrow = $('header .band .rgarrow');// menu
+            var lfArrow = $('header .band .lfarrow');// open
+            var logo = $('header .band .logo');// logo
+            var microanimation = $('header .band .microanimation'); // lfMenu的滑入动画
+            var B = $('header .A_B');// A_B 面
+            var timer;
+            // 绑定鼠标事件,产生交互效果,动画缓动使用css的transition属性,在css中定义,也可以在$.css()函数中定义;
+            // 鼠标滑入
+            bands.on('mouseover', function () {
+                rgArrow.css('opacity', 0);
+                lfArrow.css('opacity', 1);
+                logo.css('left','25px');
+                microanimation.addClass('animate');
+            });
+            // 鼠标滑出
+            bands.on('mouseout', function () {
+                rgArrow.css('opacity', 1);
+                lfArrow.css('opacity', 0);
+                logo.css('left','7px');
+
+                microanimation.removeClass('animate');
+
+
+            });
+            // 点击事件,打开菜单栏
+            bands.on('click', function () {
+                B.slideToggle("fast");
+            });
+
+
+        });
+
+    </script>
+
+    <script>
+
+        //toggle() 方法切换元素的可见状态。
+        //如果被选元素可见，则隐藏这些元素，如果被选元素隐藏，则显示这些元素。
+        //toggleClass() 对设置或移除被选元素的一个或多个类进行切换。
+        //该方法检查每个元素中指定的类。如果不存在则添加类，如果已设置则删除之。这就是所谓的切换效果。
+        $(function() {
+
+            'use strict';
+
+            // 使用js进行控制样式的切换
+            $("#btnToggle").click(function() {
+
+                // 顶部右侧按钮样式切换 三条横线和叉
+                $(this).toggleClass("btn-close");
+
+
+                // 动态背景的暂停切换
+                $("#bgToggle").toggleClass("bg-paused");
+
+                // lfMenu 需要消失
+                $('#lfMenu').toggleClass('hide');
+
+                // body页面的样式切换 overflow:hidden 和 overflow:scroll, background切换;
+                $("#bodyToggle").toggleClass("no-scroll").toggleClass('B');
+                // B 面是A 面的切换面
+
+                // 正文在导航也页面时是隐藏的
+                $("#contentToggle").toggleClass("hide");
+
+
+            });
+        });
+    </script>
+
+    <script>
+        $(function () {
+            // 视频背景代码
+            $('.covervid-video').coverVid(1920, 1080);
+        })
+    </script>
+
+</body>
+</html>

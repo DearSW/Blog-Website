@@ -1,10 +1,4 @@
 
-
-
-
-
-
-
 /* 主页index2的样式 */
 
 
@@ -24,7 +18,6 @@
     }
 }
 
-
 /*--------------------------------------*/
 /**
  * header
@@ -36,41 +29,12 @@
     z-index: 9999;
 }
 
-
-
 /*------------------------------------------------*/
 
-
-
-/*-----------------------------------------------------------*/
 
 /**
  * 主体
  */
-
-.inner {
-    padding: 100px 10% 0 10%;
-    margin: 8px 8px 0 8px;
-    background: #fcf2ff;
-}
-
-@media (min-width: 48em) {
-    .inner {
-        margin: 45px 100px 0 100px;
-    }
-}
-
-
-@media all and (max-width: 48em) {
-    .inner {
-        padding-top: 70px;
-        margin: 20px 15px 0 15px;
-    }
-}
-.article {
-    position: relative;
-    z-index: 999;
-}
 
 .nav-fade {
     opacity: 0;
@@ -83,29 +47,3 @@
     transition: opacity .5s ease;
 }
 
-
-/*正文*/
-.article .text {
-    position: relative;
-}
-
-.text .text-inner {
-    padding-top: 25px;
-}
-
-/*about*/
-.about ul {
-    list-style: disc;
-    margin-left: 35px;
-    font-size: 12px;
-}
-.about li {
-    list-style: inherit;
-    padding-top: 10px;
-}
-
-.about ul:last-child {
-    padding-bottom: 20px;
-}
-
-/*--------------------------------------------------------*/

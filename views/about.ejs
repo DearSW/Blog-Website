@@ -1,0 +1,307 @@
+
+<!-- 文章 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8">
+  <title>DearSW</title>
+
+  <meta http-equiv="x-ua-compatible" content="IE=edge,chrome=1">
+
+  <!-- SEO -->
+  <meta name="keywords" content="DearSW">
+  <meta name="author" content="DearSW">
+  <meta name="description" content="DearSW">
+
+  <!--IE兼容模式，优先使用最新版的IE和Chrome内核-->
+  <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge,chrome=1" />
+
+  <!--强制优先使用360webkit内核-->
+  <meta name="renderer" content="webkit" />
+
+  <!--为移动端设备优化，设置看见区域的宽度和初始缩放比例-->
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0, maximum-scale=1">
+
+  <!-- icon图标 -->
+  <link rel="short icon" type="image/icon" href="../public/imgs/icon/hat.png">
+
+
+  <!-- 初始化样式 -->
+  <link rel="stylesheet" href="../public/css/normalize.css">
+  <link rel="stylesheet" href="../public/css/normalizeForDearSW.css">
+
+  <!-- semantic UI 引入 -->
+  <link rel="stylesheet" href="../public/css/semantic/dist/semantic.min.css">
+
+
+
+  <style>
+
+    body {
+        background: #00b5ad;
+        overflow: hidden;
+    }
+
+    /* header */
+    header {
+        position: relative;
+        display: block;
+    }
+
+    .nav {
+      display: flex;
+      position: relative;
+      height: 80px;
+      width: 100%;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      background: #00b5ad;
+      margin-bottom: 20px;
+    }
+
+    .nav .back {
+      display: inline-block;
+      font-size: 1.5rem;
+    }
+
+    .nav .back  a {
+      color: #000;
+    }
+
+    .nav .back a:hover {
+      color: #FFFFFF;
+
+    }
+
+
+    .ui.action.input:not([class*="left action"]) input:focus {
+      border-color: transparent!important;
+    }
+
+    .nav .logo {
+      position: relative;
+      display: inline-block;
+      font-size: 1.5rem;
+      transition: all .3s;
+    }
+    .nav .logo:hover {
+      color: #f4f4f4;
+    }
+    .nav .logo:hover .labelMenu {
+      display: block;
+    }
+
+    .nav .logo .labelMenu a:hover {
+      color: #0b0b16;
+    }
+    .nav .logo .labelMenu {
+      display: none;
+      position: absolute;
+      top: 16px;
+      left: 0;
+      font-size: 1rem;
+      color: whitesmoke;
+      z-index: 2;
+      background: rgba(0, 0, 0, 0);
+    }
+    .nav .logo .labelMenu li {
+      margin-top: 10px;
+      width: 100px;
+    }
+
+    @media all and (max-width: 48em) {
+      .nav .logo  {
+        display: none;
+      }
+    }
+
+
+  </style>
+
+    <style>
+
+        section {
+            position: relative;
+        }
+        .m-about {
+            position: relative;
+            display: table;
+            background: url(http://odfgqiz57.bkt.clouddn.com/image/about/about1.png) no-repeat scroll 63px 161px rgba(76, 175, 80, 0.08);
+            height: 419px;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .m-about .zhijia{
+            background: url(http://odfgqiz57.bkt.clouddn.com/image/about/about2.png) no-repeat scroll 0 0 transparent;
+            bottom: 140px;
+            height: 161px;
+            position: absolute;
+            right: 297px;
+            width: 148px;
+        }
+
+        .m-about .lunzi {
+            background: url(http://odfgqiz57.bkt.clouddn.com/image/about/about3.png) no-repeat scroll 0 0 transparent;
+            bottom: 153px;
+            height: 148px;
+            position: absolute;
+            right: 295px;
+            width: 148px;
+            animation: rotate 10s 1s infinite linear running normal;
+        }
+
+        /* 为轮子添加动画 */
+        @keyframes rotate {
+            0%{
+                transform: rotate(0deg);
+            }
+            100%{
+                transform: rotate(360deg);
+            }
+        }
+
+
+
+        .m-about .bg2 {
+            background: url(http://odfgqiz57.bkt.clouddn.com/image/about/about4.png) no-repeat scroll 0 0 transparent;
+            float: left;
+            height: 385px;
+            left: 104px;
+            position: absolute;
+            width: 818px;
+        }
+
+
+        .m-about .content {
+            position: relative;
+            display: block;
+            height: 100%;
+            width: 100%;
+            text-indent: 20px;
+        }
+
+        .m-about .content p {
+            text-indent: 32px;
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+  <header>
+  <nav class="nav">
+    <div class="back">
+      <a href="/">
+        <i class="icon left arrow"></i>
+      </a>
+    </div>
+    <div class="ui input action search">
+      <input type="text" placeholder="Search...">
+      <button class="ui icon button">
+        <i class="icon search"></i>
+      </button>
+    </div>
+    <div class="logo">
+      <i class="icon grid layout"></i>
+      <div class="labelMenu">
+        <ul>
+          <li>
+            <a href="#">
+              <div class="ui green label">
+                <i class="mail icon"></i>HTML
+              </div>
+            </a>
+          </li>
+
+          <li>
+            <a href="#">
+              <div class="ui yellow label">
+                <i class="mail icon"></i> CSS
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <div class="ui pink label">
+                <i class="mail icon"></i> JavaScipt
+              </div>
+            </a>
+
+          </li>
+          <li>
+            <a href="#">
+              <div class="ui blue label">
+                <i class="mail icon"></i> NodeJS
+              </div>
+            </a>
+
+          </li>
+          <li>
+            <a href="#">
+              <div class="ui purple label">
+                <i class="mail icon"></i> MongoDB
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+  <section>
+
+      <div class="ui grid container">
+          <div class="row">
+              <div class="sixteen wide column">
+                  <div class="ui segment">
+
+
+
+                    <div class="m-about bg1">
+                        <div class="zhijia"></div>
+                        <div class="lunzi"></div>
+                        <div class="bg2"></div>
+
+                        <div class="content">
+                            <h2>关于</h2>
+                            <p>1.基于阿里云服务器,Node驱动</p>
+                            <p>2.图片、视频等采用七牛云静态存储</p>
+                            <p>3.记录前端学习的资料与实时运用</p>
+                            <p>4.尝试使用不同的框架重构页面,多态运行</p>
+                        </div>
+
+
+                    </div>
+
+
+
+
+                  </div>
+              </div>
+          </div>
+
+      </div>
+
+
+  </section>
+
+  <!--  引入 jquery3.0 -->
+  <script src="../public/lib/jquery/jquery.min.js"></script>
+  <!-- semantic UI 引入 -->
+  <script src="../public/css/semantic/dist/semantic.min.js"></script>
+
+  <script>
+
+  </script>
+
+
+</body>
+</html>

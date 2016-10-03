@@ -1,5 +1,5 @@
 ﻿{
-  "app": 3000,
+  "app": 8888,
   "session": {
     "resave": true,
     "saveUninitialized": true,
