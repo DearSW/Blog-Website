@@ -25,7 +25,6 @@ const path = require('path'); // 系统路径
 const imagemin = require('gulp-imagemin'); // 压缩图片
 //var pngquant = require('imagemin-pngquant');
 
-//var less = require('gulp-less');
 //var livereload = require('gulp-livereload');
 
 
@@ -33,25 +32,34 @@ const imagemin = require('gulp-imagemin'); // 压缩图片
 // 定义任务
 
 // 编译sass 监听
-gulp.task('sass', function () {
-    return gulp.src('public/src/**/*.scss')
-        .pipe(sass().on('error', sass.logError))
-        .pipe(gulp.dest('./public/css'));
-});
-
-gulp.task('sass:watch', function () {
-    gulp.watch('./sass/**/*.scss', ['sass']);
-});
+//gulp.task('sass', function () {
+//    return gulp.src('public/src/**/*.scss')
+//        .pipe(sass().on('error', sass.logError))
+//        .pipe(gulp.dest('./public/css'));
+//});
+//
+//gulp.task('sass:watch', function () {
+//    gulp.watch('./sass/**/*.scss', ['sass']);
+//});
 
 
 // 编译less
-gulp.task('less', function () {
-    return gulp.src('public/src/**/*.less')
-        .pipe(less({
-            paths: [ path.join(__dirname, 'less', 'includes') ]
-        }))
-        .pipe(gulp.dest('./public/css'));
+
+gulp.task('testless', function () {
+    return gulp.src('./public/src/less/*.less')
+        .pipe(less())
+        .pipe(gulp.dest('./public/dist/css'));
 });
+
+
+gulp.task('watchless', function () {
+    gulp.watch('public/src/less/resume.less',['testless']);
+});
+
+
+gulp.task('less',['testless','watchless']);
+
+
 
 /*// 压缩图片
 gulp.task('default', function() {

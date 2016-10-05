@@ -1,24 +1,27 @@
-
 .sidebar,
-.sidebar a,
-aside a {
+.sidebar a {
     color: #fff
 }
 
-.title,
-footer p {
+.title {
     text-align: center
 }
 
 body {
     background: #e0e0e0;
-    font-family: 'Helvetica Neue',Helvetica,'Lucida Grande',Arial,'Hiragino Sans GB',微软雅黑,'WenQuanYi Micro Hei',STHeiti,SimSun,sans-serif;
     min-width: 1080px
 }
 
-.sidebar,
-aside li {
+.sidebar {
     background: #00bfa5
+}
+
+li,ul {
+    list-style: none
+}
+
+a {
+    text-decoration: none
 }
 
 dd,dt,h1,h2,h3,h4,h5,p {
@@ -26,8 +29,27 @@ dd,dt,h1,h2,h3,h4,h5,p {
 }
 
 
+.mode {
+    position: fixed;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.mode select {
+    position: relative;
+    width: 103px;
+    height: 38px;
+    border: none;
+    outline: none;
+    display: table;
+    color: #f9f0f0;
+    background: #009688;
+    font-size: 14px;
+}
 
-/*----------------- left -------------------*/
+
+/*------left-------*/
+
 .sidebar {
     position: absolute;
     top: 0;
@@ -41,15 +63,12 @@ dd,dt,h1,h2,h3,h4,h5,p {
     margin-bottom: -10000px
 }
 
-.main,
-.skill,
-.skill-name,
-h4 {
+.main,.skill,.skill-name,h4 {
     position: relative
 }
 
 .title {
-    margin: 25px 0 20px;
+    margin: 25px 0 20px
 }
 
 .title img {
@@ -61,7 +80,7 @@ h4 {
 
 h1 {
     font-size: 28px;
-    font-weight: 400;
+    font-weight: 400
 }
 
 h2 {
@@ -75,21 +94,18 @@ h2 {
 .side-info dt {
     font-size: 18px;
     color: #9f3;
-    line-height: 40px
+    line-height: 40px;
+    margin-left: 5px;
 }
 
 .side-info dd {
     font-size: 14px;
-    line-height: 20px;
+    line-height: 20px
 }
-
-
-
 
 .side-info .someRight span {
     margin-right: 11px;
 }
-
 .side-info .someRight dd {
     margin-left: 43px;
     margin-top: 8px;
@@ -127,8 +143,7 @@ h2 {
 
 
 
-
-/*----------------- right -------------------*/
+/*-------------right--------------*/
 
 .container {
     position: relative;
@@ -140,9 +155,6 @@ h2 {
     -webkit-border-radius: 4px;
     border-radius: 4px
 }
-
-
-
 .main {
     left: 300px;
     width: 720px;
@@ -173,9 +185,8 @@ h2 {
     color: #616161
 }
 
-
 .main-info .someRight dd {
-    margin-left: 25px
+    margin-left: 25px;
 }
 
 h4,h5 {
@@ -264,13 +275,6 @@ h4 a,h5 a {
     width: inherit
 }
 
-footer {
-    margin: 30px 0 20px
-}
-
-footer p {
-    font-size: 14px
-}
 
 .throb {
     -webkit-animation: throb 1.33s ease-in-out infinite;

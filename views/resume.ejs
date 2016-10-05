@@ -34,13 +34,23 @@
     <link rel="stylesheet" href="../public/css/semantic/dist/components/icon.min.css">
 
     <!-- resume样式 -->
-    <link rel="stylesheet" href="../public/css/resume.css">
+    <link id="mode" rel="stylesheet" href="../public/dist/css/resume2.css">
 
 
 
 </head>
 <body>
 
+
+    <aside>
+        <div class="mode">
+            <select id="themes">
+                <option value="resume2.css" selected>mode-two</option>
+                <option value="resume1.css">mode-one</option>
+                <option value="resume3.css" disabled>mode-three</option>
+            </select>
+        </div>
+    </aside>
 
     <!----------------------------------------------------->
     <!----------------------------------------------------->
@@ -65,12 +75,12 @@
                 <ul class="side-info">
 
                     <li class="someRight">
-                        <dt><i class="icon angle double right"></i>POSITION-职位</dt>
+                        <dt><i class="icon angle double right"></i>POSITION&nbsp;&nbsp;职位</dt>
                         <dd>前端研发</dd>
                     </li>
 
                     <li class="skill">
-                        <dt><i class="icon angle double right"></i>TECH-技能点</dt>
+                        <dt><i class="icon angle double right"></i>TECH&nbsp;&nbsp;技能点</dt>
 
 
                         <dd>
@@ -117,11 +127,11 @@
                             </div>
                         </dd>
 
-                        
+
                     </li>
 
                     <li class="someRight">
-                        <dt><i class="icon angle double right"></i>CONTACT-联系</dt>
+                        <dt><i class="icon angle double right"></i>CONTACT&nbsp;&nbsp;联系</dt>
 
                         <dd><span>Email</span><a href="mailto:18405813977@163.com" target="_blank">18405813977@163.com</a></dd>
                         <dd><span>WeiXin</span>、召维</dd>
@@ -131,216 +141,244 @@
                 </ul>
 
                 <div class="note">
-                    世事贵精,保持严谨、极致的姿态
+                    世事贵精,保持严谨、极致的态度
                 </div>
           </div>
 
         <!----------------------------------------------------->
         <!----------------------------------------------------->
         <!----------------------------------------------------->
-          <div class="main">
-        <ul class="main-info">
-          <li class="someRight">
-            <dt><i class="icon-bookmark"></i>Basic info. 基本信息</dt>
-            <dd><span>个人信息:</span> 范文杰 / 男 / 20岁</dd>
-            <dd><span>教育经历:</span> 本科 / 武汉理工大学计算机系 / 2016年应届生</dd>
-            <dd><span>英语水平:</span> CET-6</dd>
-            <dd><span>常用ID:</span> DIYgod</dd>
-            <dd><span>Blog:</span> <a href="https://www.anotherhome.net" target="_blank">www.anotherhome.net</a></dd>
-            <dd><span>GitHub:</span> <a href="https://www.github.com/DIYgod" target="_blank">www.github.com/DIYgod</a></dd>
-          </li>
-          <li>
-            <dt><i class="icon-bookmark"></i>Experience. 项目与工作经验</dt>
-            <h3>武汉深之度科技有限公司（2015.7 - 2015.11）</h3>
-            <ul class="exp">
-              <li>
-                <div class="circle"></div>
-                <h4>深度商店项目</h4>
-                <p>参与 Linux Deepin 深度商店V4.0 的前端开发工作，根据设计图完成项目的大部分样式，完成了首页、搜索列表、软件详情、软件分类、专题、关于等页面，其中有评论交互、三个不同的轮播图、侧边栏左右拖动、搜索交互等内容，项目采用 WebApp 的形式，运行在 Qt WebKit 上，后端与 deepin 操作系统深度整合，支持一键安装、更新和卸载软件</p>
-                <p>使用 AngularJS 框架 和 Sass 预处理器 来实现前端组件及数据交互，使用 Gulp Bower 改进工作流</p>
-                <img src="img/dstore.png">
-              </li>
-            </ul>
-            <h3>个人项目</h3>
-            <ul class="exp">
-              <li>
-                <div class="circle"></div>
-                <h4>
-                  APlayer（2015.11）
-                  <a href="https://github.com/DIYgod/APlayer" target="_blank"><i class="icon-link"></i>源代码</a>
-                  <a href="https://www.anotherhome.net/file/APlayer/" target="_blank"><i class="icon-link"></i>Demo</a>
-                </h4>
-                <p>炒鸡好看的 HTML5 音乐播放器，GitHub 热门榜（GitHub Trending repositories）前八，npm 下载量 4k+，GitHub 上 Star 615 Fork 103</p>
-                <img src="img/aplayer.png">
-              </li>
-              <li>
-                <div class="circle"></div>
-                <h4>
-                  Anotherhome个人博客（2014.2 - 至今）
-                  <a href="https://github.com/DIYgod/Amativeness" target="_blank"><i class="icon-link"></i>源代码</a>
-                  <a href="https://www.anotherhome.net" target="_blank"><i class="icon-link"></i>Demo</a>
-                </h4>
-                <p>Wordpress主题修改，内容维护，现日均浏览量 1000+</p>
-                <img src="img/anotherhome.png">
-              </li>
-              <li>
-                <div class="circle"></div>
-                <h4>
-                  百度IFE前端技术学院课程（2015.4 - 2015.6）
-                  <a href="https://github.com/DIYgod/ife-work" target="_blank"><i class="icon-link"></i>源代码</a>
-                </h4>
-                <p>学习百度IFE前端技术学院春季班课程，并独立完成其中的任务</p>
-                <ul class="efe">
-                  <li>
-                    <h5>
-                      Task 0001
-                      <a href="https://github.com/DIYgod/ife-work/tree/master/task0001" target="_blank"><i class="icon-link"></i>源代码</a>
-                      <a href="https://www.anotherhome.net/file/ife/task0001/" target="_blank"><i class="icon-link"></i>Demo</a>
-                    </h5>
-                    <p>实现了一个个人博客网站的首页、文章、作品、关于等静态页面，合理运用HTML语义化标签，并实现了多栏布局、瀑布流布局、时间轴等布局样式。</p>
-                    <img src="img/task0001.png">
-                  </li>
-                  <li>
-                    <h5>
-                      Task 0002
-                      <a href="https://github.com/DIYgod/ife-work/tree/master/task0002" target="_blank"><i class="icon-link"></i>源代码</a>
-                      <a href="https://www.anotherhome.net/file/ife/task0002/task0002_1.html" target="_blank"><i class="icon-link"></i>Demo</a>
-                    </h5>
-                    <p>实现了一个微型JS库，其中包括对原生 JavaScript 数据类型及语言基础、DOM、事件、BOM、Ajax等的操作和封装，并运用这个JS库实现了表单输入交互、倒计时工具、轮播图、输入提示框、界面拖拽交互</p>
-                    <img src="img/task0002.png">
-                  </li>
-                  <li>
-                    <h5>Task 0003 0004
-                      <a href="https://github.com/DIYgod/ife-work/tree/master/task0004" target="_blank"><i class="icon-link"></i>源代码</a>
-                      <a href="https://www.anotherhome.net/file/ife/task0004/" target="_blank"><i class="icon-link"></i>Demo</a>
-                    </h5>
-                    <p>实现了一个 GTD Tools (个人任务管理系统)，支持任务两级分类、增删查改、标记、根据日期分类等功能，并实现了一个独立的移动版本</p>
-                    <p>使用 localStorage 来保存用户的任务数据，处理了可能出现的 XSS 安全隐患，使用 原生JavaScript Less预处理器 来实现前端组件及数据交互，使用 Yeoman Grunt 改进工作流</p>
-                    <img src="img/task0003.png">
-                    <img src="img/task0004.png" height="97px">
-                  </li>
+        <div class="main">
+                <ul class="main-info">
+
+                      <li class="someRight">
+                            <dt><i class="icon-bookmark"></i>BASIC INFO &nbsp;&nbsp;  基本信息</dt>
+                            <dd><span>个人信息:</span> 滕召维 / 男 / 22岁</dd>
+                            <dd><span>教育经历:</span> 本科 / 杭州电子科技大学通信工程系 / 2017年应届生</dd>
+                            <dd><span>英语水平:</span> CET-4</dd>
+                            <dd><span>常用ID:</span> DearSW</dd>
+                            <dd><span>Blog:</span> <a href="http://www.dearsw.top" target="_blank">www.dearsw.top</a></dd>
+                            <dd><span>GitHub:</span> <a href="https://github.com/DearSW" target="_blank">https://github.com/DearSW</a></dd>
+                      </li>
+
+                      <li>
+                            <dt><i class="icon-bookmark"></i>EXPERIENCE&nbsp;&nbsp;   项目经验</dt>
+
+                            <!--<h3>武汉深之度科技有限公司（2015.7 - 2015.11）</h3>
+
+                            <ul class="exp">
+                                  <li>
+                                        <div class="circle"></div>
+                                        <h4>深度商店项目</h4>
+                                        <p>参与 Linux Deepin 深度商店V4.0 的前端开发工作，根据设计图完成项目的大部分样式，完成了首页、搜索列表、软件详情、软件分类、专题、关于等页面，其中有评论交互、三个不同的轮播图、侧边栏左右拖动、搜索交互等内容，项目采用 WebApp 的形式，运行在 Qt WebKit 上，后端与 deepin 操作系统深度整合，支持一键安装、更新和卸载软件</p>
+                                        <p>使用 AngularJS 框架 和 Sass 预处理器 来实现前端组件及数据交互，使用 Gulp Bower 改进工作流</p>
+                                        <img src="img/dstore.png">
+                                  </li>
+                            </ul>
+
+                            <h3>个人项目</h3>-->
+
+                            <ul class="exp">
+
+                                  <li>
+                                        <div class="circle"></div>
+
+                                        <h4>
+                                              Express开发
+                                              <a href="https://github.com/DearSW/DearSW-Website" target="_blank"><i class="icon-link"></i>源代码</a>
+                                              <a href="https://www.anotherhome.net/file/APlayer/" target="_blank"><i class="icon-link"></i>Demo</a>
+                                        </h4>
+
+                                        <p>
+                                            基于NodeJS的Express框架进行开发,采用MVC模式;<br />
+                                            使用gulp项目构建工具,进行图片、代码的压缩和拼接,预处理文件的编译,监听;<br />
+                                            使用ejs模版来填充数据、渲染页面;<br />
+                                            尝试各种图片优化方案,减少HTTP请求,比如base64图片编码、字体图标、CDN加速;<br />
+                                            使用CSS3的动画技术,页面的动态交互,简单的Canvas绘画技术;<br />
+                                            页面响应式处理;<br />
+                                            后端采用MongoDB数据库来保存数据的增删查改;<br />
+                                        </p>
+                                        <img src="img/aplayer.png">
+                                  </li>
+
+                                  <li>
+                                        <div class="circle"></div>
+                                        <h4>
+                                              网易产品部页面
+                                              <a href="https://github.com/DIYgod/Amativeness" target="_blank"><i class="icon-link"></i>源代码</a>
+                                              <a href="https://www.anotherhome.net" target="_blank"><i class="icon-link"></i>Demo</a>
+                                        </h4>
+                                        <p>
+                                            根据产品部的PSD交互图,实现页面的布局、动态数据展示、交互逻辑处理;
+                                        </p>
+                                        <img src="img/anotherhome.png">
+                                  </li>
+
+
+                                  <li>
+                                        <div class="circle"></div>
+                                        <h4>
+                                              Image-blur模块
+                                              <a href="https://github.com/DIYgod/Resume" target="_blank"><i class="icon-link"></i>源代码</a>
+                                              <a href="http://html.love/" target="_blank"><i class="icon-link"></i>Demo</a>
+                                        </h4>
+                                        <p>
+                                            实现网站的图片的优雅降级处理,优化用户体验;<br />
+                                            降低服务器宽带压力;<br />
+                                            模糊化处理图片;<br />
+                                            使用原生Javascript和ES6来编码,gulp构建工作流;<br />
+                                        </p>
+                                        <img src="img/resume.png">
+                                  </li>
+
+                                  <li>
+                                        <div class="circle"></div>
+                                        <h4>
+                                              轮播组件
+                                              <a href="https://github.com/DIYgod/jCarrousel" target="_blank"><i class="icon-link"></i>源代码</a>
+                                              <a href="https://www.anotherhome.net/file/jCarrousel/" target="_blank"><i class="icon-link"></i>Demo</a>
+                                        </h4>
+                                        <p>
+                                            包括原生组件和基于jQuery的插件
+                                        </p>
+                                        <img src="img/jCarrousel.jpg">
+                                  </li>
+
+                                  <li>
+                                        <div class="circle"></div>
+                                        <h4>
+                                              Ajax留言模块
+                                              <a href="https://github.com/DIYgod/Do-you-like-me" target="_blank"><i class="icon-link"></i>源代码</a>
+                                              <a href="https://www.anotherhome.net/file/like/" target="_blank"><i class="icon-link"></i>Demo</a>
+                                        </h4>
+                                        <p>
+                                            使用原生JS代码封装Ajax请求,兼容处理,参数编码处理;<br />
+                                            使用ES6新增的字符串模版来填数据,gulp-babel进行编译;<br />
+                                            采用Mock.js来模拟后端的返回数据;<br />
+                                            使用JSONP跨域技术,从安全的freegeoip.net站点来返回关于用户的地理、IP、主机信息;<br />
+                                        </p>
+                                        <img src="img/Do-you-like-me.png">
+                                  </li>
+
+
+
+                                  <li>
+                                        <div class="circle"></div>
+                                        <h4>
+                                            个人 Collections
+                                            <a href="https://github.com/DIYgod/WHUTNews" target="_blank"><i class="icon-link"></i>源代码</a>
+                                        </h4>
+                                        <p>
+                                            包括各种简洁的技术代码,微小组件实现,用JSFiddle来展现;
+                                        </p>
+                                  </li>
+
+
+                                  <li>
+                                        <div class="circle"></div>
+                                        <h4>
+                                            购票网站
+                                            <a href="https://github.com/DIYgod/WHUTNews" target="_blank"><i class="icon-link"></i>源代码</a>
+                                        </h4>
+                                        <p>
+                                            前端使用fullpage框架,后端使用PHP和Mysql;
+                                        </p>
+                                  </li>
+                            </ul>
+
+
+                      </li>
+
+                       <li>
+
+                            <dt><i class="icon-bookmark"></i>Skill. 技能清单</dt>
+
+                            <h3>Web前端</h3>
+
+                            <ul class="exp">
+                                  <li>
+                                        <div class="circle"></div>
+                                        <h4>HTML / CSS</h4>
+                                        <p>能够编写语义化的 HTML，模块化的 CSS，完成较复杂的布局</p>
+                                        <p>熟悉 Less / Sass / Autoprefixer 等CSS预处理和后处理方法、工具</p>
+                                  </li>
+                                  <li>
+                                        <div class="circle"></div>
+                                        <h4>JavaScript</h4>
+                                        <p>熟悉原生Javascript，能脱离jQuery等类库编码</p>
+                                        <p>能运用模块化、面向对象的方式编程</p>
+                                        <p>了解 RequireJS jQuery AngularJS 的使用</p>
+                                  </li>
+                                  <li>
+                                        <div class="circle"></div>
+                                        <h4>其他</h4>
+                                        <p>熟悉 Yeoman Bower Grunt Gulp 前端自动化工具</p>
+                                        <p>了解前端安全、性能优化方面的一些知识</p>
+                                  </li>
+                            </ul>
+
+                            <h3>后端</h3>
+
+                            <ul class="exp">
+                                  <li>
+                                        <div class="circle"></div>
+                                        <h4>环境</h4>
+                                        <p>熟悉 Linux 开发环境、 Linux 服务器环境搭建部署，两年 Linux 日常使用经验</p>
+                                        <p>了解 Apache Nginx web服务器，一年多建站经验</p>
+                                  </li>
+                                  <li>
+                                        <div class="circle"></div>
+                                        <h4>语言</h4>
+                                        <p>了解 Python，能够实现简单的爬虫、数据及图像处理工具、自动化脚本</p>
+                                        <p>了解 C，读过《C Primer Plus》，能编写简单的解释器</p>
+                                        <p>了解 Java，能进行简单的网络编程和多线程编程</p>
+                                  </li>
+                            </ul>
+
+
+                            <h3>其他</h3>
+
+                            <ul class="exp">
+                                  <li>
+                                        <p>是一个有趣的人，博客日均浏览量 1000+，GitHub Followers 550+，微博粉丝 780+，微信公众号关注用户 460+</p>
+                                        <p>严重强迫症，不能忍受界面一个像素的偏差，同样不能忍受代码格式一个空格的偏差</p>
+                                        <p>学习能力强，以上绝大多数的技能都是大三转专业之后自学修得的</p>
+                                        <p>掌握 Vim Git 等开发工具的使用</p>
+                                        <p>能够熟练使用 Markdown 进行写作</p>
+                                  </li>
+                            </ul>
+                       </li>
                 </ul>
-              </li>
-              <li>
-                <div class="circle"></div>
-                <h4>
-                  HTML.LOVE 个人简历（2015.8 - 至今）
-                  <a href="https://github.com/DIYgod/Resume" target="_blank"><i class="icon-link"></i>源代码</a>
-                  <a href="http://html.love/" target="_blank"><i class="icon-link"></i>Demo</a>
-                </h4>
-                <p>设计优雅、内容完善的静态简历页面，可以用浏览器直接生成合适尺寸的PDF，使用 Gulp 改进工作流，GitHub 上 Star 133 Fork 33</p>
-                <img src="img/resume.png">
-              </li>
-              <li>
-                <div class="circle"></div>
-                <h4>
-                  jCarrousel（2015.8）
-                  <a href="https://github.com/DIYgod/jCarrousel" target="_blank"><i class="icon-link"></i>源代码</a>
-                  <a href="https://www.anotherhome.net/file/jCarrousel/" target="_blank"><i class="icon-link"></i>Demo</a>
-                </h4>
-                <p>一个3D轮播图 jQuery 插件，实现了3D轮播效果，可以自适应宽度、自适应图片数量，有方便的切换按钮，另外实现了播放、停止、切换到任意一张图片的API</p>
-                <img src="img/jCarrousel.jpg">
-              </li>
-              <li>
-                <div class="circle"></div>
-                <h4>
-                  Do-you-like-me（2015.9）
-                  <a href="https://github.com/DIYgod/Do-you-like-me" target="_blank"><i class="icon-link"></i>源代码</a>
-                  <a href="https://www.anotherhome.net/file/like/" target="_blank"><i class="icon-link"></i>Demo</a>
-                </h4>
-                <p>一个简单有趣的 UI 点赞组件，后端使用 NodeJS + MongoDB 实现，用 mongoose 操作 MongoDB，实现了对 MongoDB 数据库简单的增删查改</p>
-                <img src="img/Do-you-like-me.png">
-              </li>
-              <li>
-                <div class="circle"></div>
-                <h4>
-                  EasyGoAgent
-                  <a href="https://github.com/DIYgod/EasyGoAgent" target="_blank"><i class="icon-link"></i>源代码</a>
-                </h4>
-                <p>开箱即用 &amp; 在线更新的GoAgent，GitHub 上 Star 209 Fork 70</p>
-              </li>
-              <li>
-                <div class="circle"></div>
-                <h4>
-                  Show Me the Code Python version
-                  <a href="https://github.com/DIYgod/python/tree/master/DIYgod" target="_blank"><i class="icon-link"></i>源代码</a>
-                </h4>
-                <p>一系列Python小程序，包括 图像处理 数据库 文件操作 正则式 等内容</p>
-              </li>
-              <li>
-                <div class="circle"></div>
-                <h4>
-                  Simple-C Compiler
-                  <a href="https://github.com/DIYgod/Compiler" target="_blank"><i class="icon-link"></i>源代码</a>
-                </h4>
-                <p>一个用C编写的简单类C语言编译器，目前完成了 词法分析 语法分析 阶段，使用了 Lex Yacc 两个工具</p>
-              </li>
-              <li>
-                <div class="circle"></div>
-                <h4>
-                  WHUTNews
-                  <a href="https://github.com/DIYgod/WHUTNews" target="_blank"><i class="icon-link"></i>源代码</a>
-                </h4>
-                <p>Python 编写的爬取教务处公告，判断是否有新通知，并把新通知发邮件提醒的简单 Python 爬虫程序</p>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <dt><i class="icon-bookmark"></i>Skill. 技能清单</dt>
-            <h3>Web前端</h3>
-            <ul class="exp">
-              <li>
-                <div class="circle"></div>
-                <h4>HTML / CSS</h4>
-                <p>能够编写语义化的 HTML，模块化的 CSS，完成较复杂的布局</p>
-                <p>熟悉 Less / Sass / Autoprefixer 等CSS预处理和后处理方法、工具</p>
-              </li>
-              <li>
-                <div class="circle"></div>
-                <h4>JavaScript</h4>
-                <p>熟悉原生Javascript，能脱离jQuery等类库编码</p>
-                <p>能运用模块化、面向对象的方式编程</p>
-                <p>了解 RequireJS jQuery AngularJS 的使用</p>
-              </li>
-              <li>
-                <div class="circle"></div>
-                <h4>其他</h4>
-                <p>熟悉 Yeoman Bower Grunt Gulp 前端自动化工具</p>
-                <p>了解前端安全、性能优化方面的一些知识</p>
-              </li>
-            </ul>
-            <h3>后端</h3>
-            <ul class="exp">
-              <li>
-                <div class="circle"></div>
-                <h4>环境</h4>
-                <p>熟悉 Linux 开发环境、 Linux 服务器环境搭建部署，两年 Linux 日常使用经验</p>
-                <p>了解 Apache Nginx web服务器，一年多建站经验</p>
-              </li>
-              <li>
-                <div class="circle"></div>
-                <h4>语言</h4>
-                <p>了解 Python，能够实现简单的爬虫、数据及图像处理工具、自动化脚本</p>
-                <p>了解 C，读过《C Primer Plus》，能编写简单的解释器</p>
-                <p>了解 Java，能进行简单的网络编程和多线程编程</p>
-              </li>
-            </ul>
-            <h3>其他</h3>
-            <ul class="exp">
-              <li>
-                <p>是一个有趣的人，博客日均浏览量 1000+，GitHub Followers 550+，微博粉丝 780+，微信公众号关注用户 460+</p>
-                <p>严重强迫症，不能忍受界面一个像素的偏差，同样不能忍受代码格式一个空格的偏差</p>
-                <p>学习能力强，以上绝大多数的技能都是大三转专业之后自学修得的</p>
-                <p>掌握 Vim Git 等开发工具的使用</p>
-                <p>能够熟练使用 Markdown 进行写作</p>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </div>
+        </div>
     </div>
 
+    <script>
+        (function () {
 
+            var mode = function () {
+                var a = document.getElementById('mode');
+                var b = document.getElementById('themes');
+
+                function change() {
+                    a.href = '../public/dist/css/' + b.value;
+//                    a.href = '../public/css/markdown-css-themes/' + b.value;
+                }
+
+                return {
+                    watch: function () {
+                        b.onchange = function () {
+                            change();
+                        }
+                    }
+                };
+            }();
+
+            mode.watch();
+
+        })(window);
+
+
+    </script>
 
 
 
