@@ -164,11 +164,11 @@ h2 {
 }
 
 .main a {
-    color: #4db6ac
+    color: #4db6ac;
 }
 
 .main-info>li {
-    padding-top: 20px
+    padding-top: 20px;
 }
 
 .main-info dt {
@@ -176,13 +176,13 @@ h2 {
     color: #00796b;
     line-height: 30px;
     border-bottom: 1px solid #00796b;
-    margin: 0 0 15px -5px
+    margin: 0 0 15px -5px;
 }
 
 .main-info dd {
     font-size: 15px;
     line-height: 27px;
-    color: #616161
+    color: #616161;
 }
 
 .main-info .someRight dd {
@@ -195,11 +195,11 @@ h4,h5 {
 
 .main-info span {
     color: #000;
-    font-size: 16px
+    font-size: 16px;
 }
 
-.exp p,footer a,footer p {
-    color: #616161
+.exp p {
+    color: #616161;
 }
 
 h3 {
@@ -263,7 +263,8 @@ h4 a,h5 a {
 }
 
 .exp img {
-    width: 200px
+    width: 200px;
+    height: 150px;
 }
 
 .exp ul>li {

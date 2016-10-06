@@ -22,25 +22,23 @@ h5,
 p {
   cursor: default;
 }
-
 .mode {
-    position: fixed;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
 }
 .mode select {
-    position: relative;
-    width: 103px;
-    height: 38px;
-    border: none;
-    outline: none;
-    display: table;
-    color: #f9f0f0;
-    background: #009688;
-    font-size: 14px;
+  position: relative;
+  width: 103px;
+  height: 38px;
+  border: none;
+  outline: none;
+  display: table;
+  color: #f9f0f0;
+  background: #009688;
+  font-size: 14px;
 }
-
 /*----------------- left -------------------*/
 .sidebar {
   position: absolute;
@@ -122,9 +120,6 @@ h2 {
   color: #9E9E9E;
   font-size: 18px;
 }
-
-
-
 /*----------------- right -------------------*/
 .container {
   position: relative;
@@ -229,6 +224,7 @@ h5 a {
 }
 .exp img {
   width: 200px;
+  height: 150px;
 }
 .exp ul > li {
   margin: 0 0 12px;
