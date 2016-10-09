@@ -5,13 +5,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>DearSW</title>
-    <meta http-equiv="x-ua-compatible" content="IE=edge,chrome=1">
+    <title>DearSW BLOG</title>
 
     <!-- SEO -->
-    <meta name="keywords" content="DearSW">
+    <meta name="keywords" content="DearSW,前端,express,node,mongodb">
     <meta name="author" content="DearSW">
-    <meta name="description" content="DearSW">
+    <meta name="description" content="DearSW前端,express,node,mongodb">
 
     <!--IE兼容模式，优先使用最新版的IE和Chrome内核-->
     <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge,chrome=1" />
@@ -20,7 +19,6 @@
     <meta name="renderer" content="webkit" />
 
     <!--为移动端设备优化，设置看见区域的宽度和初始缩放比例-->
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     <!-- icon图标 -->
@@ -33,14 +31,10 @@
 
     <!-- 组件样式 -->
     <!-- 主页动态背景 -->
-    <link rel="stylesheet" href="../public/css/components/background-animation.css">
+    <!--<link rel="stylesheet" href="../public/css/components/background-animation.css">-->
 
     <!-- loader -->
     <link rel="stylesheet" href="../public/css/components/loader.css">
-
-    <!-- 主页基础样式 -->
-    <link rel="stylesheet" href="../public/css/index2.css">
-
 
     <!-- semantic UI 引入 -->
     <link rel="stylesheet" href="../public/css/semantic/dist/semantic.min.css">
@@ -48,6 +42,20 @@
 
     <style>
         * { box-sizing: border-box; }
+        #header {
+            position: relative;
+            width: 100%;
+            z-index: 9999;
+        }
+        .no-scroll {
+            overflow: hidden;
+        }
+
+        @media all and (max-width: 48em) {
+            .no-scroll {
+                overflow: hidden;
+            }
+        }
 
         /* 出现问题, m-topmenu and m-lfmenu 出现了层叠的问题,由于 m-lfmenu 后出现且覆盖了
            整个屏幕,导致了什么问题?导致注册在 m-topmenu 上的点击事件无法点击了,也就被 m-lfmenu 挡住了,
@@ -319,10 +327,9 @@
             top: 0;
             left: 0;
             width: calc(100% - 80px);
-            height: 500px;
+            height: 612px;
             overflow: hidden;
             z-index: 3;
-            margin-top: 57px;
             /* 父层叠 */
 
         }
@@ -334,11 +341,15 @@
             width: 100%;
             height: 100%;
             z-index: -1;
+            filter: blur(5px);
         }
 
         .m-rightArea .content {
-            position: relative;
+            position: absolute;
             text-align: center;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
         }
     </style>
 
@@ -365,15 +376,15 @@
 
 
 <!-- 动态背景 -->
-<!--bg-paused 切换-->
+<!--bg-paused 切换--><!--
 <div id="bgToggle" class="bg">
-    <!--1-->
+    &lt;!&ndash;1&ndash;&gt;
     <picture class="bg-position" style="background-image: url(../public/imgs/odient/odient-1-desktop.jpg);">
         <source srcset="./images/odient/odient-1-desktop.jpg 1x, ./images/odient/odient-1-desktop-2x.jpg 2x" media="(min-width: 1024px)">
         <source srcset="./images/odient/odient-1-tablet.jpg 1x, ./images/odient/odient-1-tablet-2x.jpg 2x" media="(min-width: 768px)">
         <source srcset="./images/odient/odient-1-mobile.jpg 1x, ./images/odient/odient-1-mobile-2x.jpg 2x">
     </picture>
-    <!--2-->
+    &lt;!&ndash;2&ndash;&gt;
     <div class="bg-animations">
         <picture class="bg-position bg-animation bg-z1"  style="background-image: url(../public/imgs/odient/odient-1-desktop.jpg);">
             <source srcset="./images/odient/odient-1-desktop.jpg 1x, ./images/odient/odient-1-desktop-2x.jpg 2x" media="(min-width: 1024px)">
@@ -391,7 +402,7 @@
             <source srcset="./images/odient/odient-3-mobile.jpg 1x, ./images/odient/odient-3-mobile-2x.jpg 2x">
         </picture>
     </div>
-</div>
+</div>-->
 
 
 <!-----------------------header 开始------------------------------------------->
@@ -445,7 +456,7 @@
                         <p>文章</p>
                     </div>
                 </a>
-                <a href="/blogs">
+                <a href="https://dearsw.github.io/Frontend-Resource/html/index.html">
                     <div class="Bbg three"></div>
                     <div class="dpt">
                         <p>资源</p>
@@ -484,11 +495,14 @@
 
             <!-- 视频背景 -->
             <div class="covervid-wrapper">
-                <video class="covervid-video" autoplay loop poster="../public/imgs/office.jpg">
+                <video class="covervid-video" autoplay loop poster="../public/imgs/Mac.png" >
                     <source src="http://odfgqiz57.bkt.clouddn.com/video/uzik.mp4" type="video/mp4">
                     <source src="../public/videos/uzik.mp4" type="video/mp4">
                 </video>
             </div>
+
+
+            <!-- 动态语句 -->
             <div class="content">
                 <h1>To be or not to be,that is a question!</h1>
             </div>
@@ -575,13 +589,6 @@
 
             // 使用js进行控制样式的切换
             $("#btnToggle").click(function() {
-
-                // 顶部右侧按钮样式切换 三条横线和叉
-                $(this).toggleClass("btn-close");
-
-
-                // 动态背景的暂停切换
-                $("#bgToggle").toggleClass("bg-paused");
 
                 // lfMenu 需要消失
                 $('#lfMenu').toggleClass('hide');
