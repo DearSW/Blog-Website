@@ -141,7 +141,6 @@
                 <option value="mode-four.css" selected>mode-four</option>
                 <option value="mode-one.css">mode-one</option>
                 <option value="mode-two.css">mode-two</option>
-                <option value="mode-three.css">mode-three</option>
             </select>
         </div>
 
@@ -170,11 +169,15 @@
 
     <div class="m-rightcenter">
 
+
         <article>
+
+
+
+            <% posts.forEach(function(post, index) { %>
 
             <div class="ui special raised stackable doubling cards">
 
-                <% posts.forEach(function(post, index) { %>
                 <div class="card">
                     <div class="blurring dimmable image">
                         <div class="ui dimmer">
@@ -228,7 +231,6 @@
 
                 </div>
 
-                <% }) %>
 
             </div>
 
@@ -236,7 +238,10 @@
             <!-- 写好之后再封装到 backend_footer 之中-->
 
 
+            <% }) %>
+
             <%- include backend_paging %>
+
 
         </article>
 

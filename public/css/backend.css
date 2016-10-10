@@ -124,6 +124,11 @@ body {
     border-radius: 5px;
 }
 
+.m-rightcenter article .ui.cards {
+    display: inline-block;
+    margin: 0;
+}
+
 
 /************************* right center register *************************/
 

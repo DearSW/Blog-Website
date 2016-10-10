@@ -34,19 +34,7 @@ button, #ws {
 	background-color: #eee;
 }
 
-code, pre, #ws, #message {
-	font-family: Monaco;
-	font-size: 10pt;
-	border-radius: 3px;
-	background-color: #F8F8F8;
-	color: inherit;
-}
 
-code {
-	border: 1px solid #EAEAEA;
-	margin: 0 2px;
-	padding: 0 5px;
-}
 
 pre {
 	border: 1px solid #CCCCCC;

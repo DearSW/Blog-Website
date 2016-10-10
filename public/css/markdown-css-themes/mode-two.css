@@ -62,11 +62,7 @@ pre {
     max-width: 800px;
     white-space: pre-wrap;
 }
-code {
-    font-family: Consolas, Monaco, Andale Mono, monospace;
-    line-height: 1.5;
-    font-size: 13px;
-}
+
 aside {
     display: block;
     float: right;
