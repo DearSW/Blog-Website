@@ -35,7 +35,7 @@ app.set('view engine', 'ejs'); // 设置 视图模版引擎 ejs
 
 
 // uncomment after placing your favicon in /public
-app.use(favicon(path.join(__dirname, 'public', 'favicon.ico'))); // icon图片的位置
+//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico'))); // icon图片的位置
 
 // HTTP请求日志中间件的Node.js
 // dev 参数 通过开发使用响应状态着色的简洁输出。：红色的服务器错误代码，黄色为客户端错误代码，重定向代码青色，和无色的所有其他代码。
