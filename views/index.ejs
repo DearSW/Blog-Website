@@ -182,6 +182,11 @@
             opacity: 0;
         }
 
+        @media all and (max-width: 48em) {
+            .m-lfmenu .band {
+                display: none;
+            }
+        }
 
         /* A_B 面 */
         .m-lfmenu .A_B {
@@ -196,12 +201,20 @@
             height: 100%;
             z-index: 4;
             /* 子层叠 */
-            background: rgba(255, 255, 255, 0);
+            background: #ffffff;
             font-size: 0;
             /* 主要为了解决inline-block之间那个1px的空隙的历史问题 */
             animation: changeB_a .5s;
         }
 
+        @media all and (max-width: 48em) {
+            .m-lfmenu .A_B {
+                display: block;
+                width: 100%;
+                left: 0;
+            }
+
+        }
 
         @keyframes changeB_a {
             0% {
@@ -216,7 +229,6 @@
             position: relative;
             height: 100%;
             width: 14%;
-            background: transparent;
             display: inline-block;
             transition: transform .8s;
         }
@@ -224,18 +236,23 @@
         @media all and (max-width: 48em) {
             .m-lfmenu .A_B > a {
                 position: relative;
-                height: 19%;
+                height: 11%;
                 width: 100%;
-                background: transparent;
                 display: inline-block;
                 transition: transform .8s;
+            }
+            .m-lfmenu .A_B > a:hover {
+                background: rgba(222, 222, 222, 0.2);
+                box-shadow: 0 1px 3px 0 rgba(158, 158, 158, 0.55);
             }
 
 
         }
 
         .m-lfmenu .A_B > a:hover {
-            transform: scale(1.2);
+            transform: scale(.7);
+            background: rgba(222, 222, 222, 0.2);
+            box-shadow: 0 1px 3px 0 rgba(158, 158, 158, 0.55);
         }
         /* 文字描述 */
         .m-lfmenu .A_B .dpt {
@@ -244,8 +261,7 @@
             left: 50%;
             transform: translate(-50%);
             font-size: 2rem;
-            color: white;
-            font-style: oblique;
+            color: #020202;
             font-weight: 100;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
@@ -258,8 +274,7 @@
                 left: 50%;
                 transform: translate(-50%);
                 font-size: 1rem;
-                color: white;
-                font-style: oblique;
+                color: #0b0b16;
                 font-weight: bold;
                 -webkit-font-smoothing: antialiased;
                 -moz-osx-font-smoothing: grayscale;
@@ -291,14 +306,30 @@
             margin-top: 35px;
         }
 
+        @media all and (max-width: 48em) {
+            .m-lfmenu .A_B .resume {
+                position: relative;
+                height: 37%;
+                width: 100%;
+                background: #fafafa;
+                display: inline-block;
+                transition: transform .8s;
+            }
+            .m-lfmenu .A_B .resume .maininfo {
+                margin-top: 10px;
+            }
+        }
+
+
 
 
         /* 图片背景 */
         .m-lfmenu .A_B .Bbg {
             height: 100%;
             background-size: cover;
+            /*background: white;*/
         }
-        .m-lfmenu .A_B .Bbg.one{
+       /* .m-lfmenu .A_B .Bbg.one{
             background: url("http://odfgqiz57.bkt.clouddn.com/image/Asset1.jpg");
             background-size: cover;
         }
@@ -317,7 +348,7 @@
         .m-lfmenu .A_B .Bbg.five{
             background: url("http://odfgqiz57.bkt.clouddn.com/image/Asset5.jpg");
             background-size: cover;
-        }
+        }*/
 
 
         /* m-rightArea */
@@ -347,10 +378,31 @@
         .m-rightArea .content {
             position: absolute;
             text-align: center;
+            color: #020202;
             top: 50%;
             left: 50%;
             transform: translate(-50%,-50%);
+            cursor: pointer;
         }
+        .m-rightArea .content .subcontent {
+            font-size: 16px;
+            color: #ffffff;
+        }
+
+        .m-rightArea .content:hover {
+            background: rgba(135, 141, 144, 0.26);
+            border-radius: 10px;
+            box-shadow: 0 1px 3px 0 black;
+            color: #121213;
+        }
+
+        @media all and (max-width: 48em) {
+            .m-rightArea {
+                display: none;
+            }
+        }
+
+
     </style>
 
 
@@ -360,7 +412,7 @@
 
 <!-- loader 加载首页动画 -->
 
-<div id="loader-wrapper">
+<!--<div id="loader-wrapper">
     <div class="loader-section section-left"></div>
     <div class="loader-section section-right"></div>
     <canvas width="400" height="200"> Waiting... </canvas>
@@ -369,7 +421,7 @@
         <br>
         <span>V1.0</span>
     </div>
-</div>
+</div>-->
 
 
 <!------------------------------------------------------------------>
@@ -447,19 +499,19 @@
                 <a href="/backend">
                     <div class="Bbg one"></div>
                     <div class="dpt">
-                        <p>BackEnd</p>
+                        <p>后台管理</p>
                     </div>
                 </a>
-                <a href="/articles">
+                <a href="https://dearsw.github.io/">
                     <div class="Bbg two"></div>
                     <div class="dpt">
-                        <p>文章</p>
+                        <p>技术文章</p>
                     </div>
                 </a>
                 <a href="https://dearsw.github.io/Frontend-Resource/html/index.html">
                     <div class="Bbg three"></div>
                     <div class="dpt">
-                        <p>资源</p>
+                        <p>前端资源</p>
                     </div>
                 </a>
                 <a href="https://github.com/DearSW">
@@ -479,6 +531,7 @@
                         <p><img src="http://odfgqiz57.bkt.clouddn.com/image/avatar/elyse.png" alt="Me" width="50px" height="50px"></p>
                         <p>Web Designer</p>
                         <p><a href="/resume">Resume for DearSW</a></p>
+                        <p><a href="/resume">简历</a></p>
                         <hr />
                     </div>
                 </div>
@@ -503,8 +556,9 @@
 
 
             <!-- 动态语句 -->
-            <div class="content">
-                <h1>To be or not to be,that is a question!</h1>
+            <div id="dynamicSaying" class="content">
+                <h1>Welcome my good friend</h1>
+                <div class="subcontent">DearSW</div>
             </div>
 
         </div>
@@ -609,6 +663,40 @@
         $(function () {
             // 视频背景代码
             $('.covervid-video').coverVid(1920, 1080);
+        })
+
+        $(function () {
+            var dynamicSaying = document.querySelector('#dynamicSaying');
+            var mainContent = dynamicSaying.firstElementChild;
+            var subContent = dynamicSaying.lastElementChild;
+            function random() {
+                // 0,1,2
+                return Math.ceil(Math.floor(Math.random()*10)%3);
+            }
+            /*var arr = new Array(3);
+            arr.push('复者道之动,柔者道之用。天下万物生于有,有生于无');
+            arr.push('知者不言,言者不知。塞其兑,闭其门,挫其锐,解其纷,和其光,同其尘,是谓\"玄同\"');
+            arr.push('知不知尚,不知知病。');*/
+
+            var arr = [
+                    ['复者道之动,柔者道之用。天下万物生于有,有生于无','道的运动是循环的,道的作用是柔弱的'],
+                    ['知者不言,言者不知。塞其兑,闭其门,挫其锐,解其纷,和其光,同其尘,是谓\"玄同\"','智者是不多言的,多话的就不是智者;塞住嗜欲的孔窍,闭起嗜欲的门径,不露锋芒,消解纷扰,含敛光耀,混同尘世,这就是玄妙齐同的境界'],
+                    ['知不知尚,不知知病','知道自己有所不知道,最好;不知道却以为自己知道,这是缺点']
+            ];
+
+            function changeSaying() {
+                var num = random() || 0;
+                mainContent.textContent = arr[num][0];
+                subContent.textContent = arr[num][1];
+            }
+
+            setTimeout(function () {
+                changeSaying();
+            },4000);
+            setInterval(function () {
+                changeSaying();
+            },30000);
+
         })
     </script>
 
