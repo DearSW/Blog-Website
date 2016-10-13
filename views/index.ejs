@@ -608,11 +608,10 @@
         <div class="m-rightArea">
 
             <!-- 视频背景 -->
-            <div class="covervid-wrapper">
-                <video class="covervid-video" autoplay loop poster="../public/imgs/Mac.png" >
-                    <source src="http://odfgqiz57.bkt.clouddn.com/video/uzik.mp4" type="video/mp4">
-                    <source src="../public/videos/uzik.mp4" type="video/mp4">
-                </video>
+            <div id="video" class="covervid-wrapper">
+                <!--<video class="covervid-video" autoplay loop poster="../public/imgs/Mac.png" >
+                    <source id="source"  type="video/mp4">
+                </video>-->
             </div>
 
 
@@ -747,8 +746,29 @@
 
     <script>
         $(function () {
-            // 视频背景代码
-            $('.covervid-video').coverVid(1920, 1080);
+
+            // 视频检测
+            function detectVideo() {
+
+                if(!(window.innerWidth < 768)) {
+
+                    var strVideo = '<video class="covervid-video" autoplay loop poster="../public/imgs/Mac.png" >\
+                                        <source id="source" src="http://odfgqiz57.bkt.clouddn.com/video/uzik.mp4"  type="video/mp4">\
+                                    </video>';
+
+                    $('#video').append(strVideo);
+
+                    $('.covervid-video').coverVid(1920, 1080);
+
+                    console.log('Yes');
+
+                } else {
+                    console.log('Nothing');
+                }
+            }
+
+            detectVideo();
+
         })
 
         $(function () {
