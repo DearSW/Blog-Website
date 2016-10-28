@@ -90,7 +90,7 @@ gulp.task('css1', function() {
     gulp.src('public/css/components/*.css')
         .pipe(cssmin())
         .pipe(rename({suffix: '.min'}))
-        .pipe(gulp.dest('public/css/components'));
+        .pipe(gulp.dest('public/css/components/'));
 });
 
 gulp.task('css2', function() {
@@ -99,6 +99,14 @@ gulp.task('css2', function() {
         .pipe(rename({suffix: '.min'}))
         .pipe(gulp.dest('public/css/'));
 });
+
+gulp.task('css3', function () {
+    gulp.src('public/lib/normalize/normalize.css')
+        .pipe(cssmin())
+        .pipe(rename({suffix: '.min'}))
+        .pipe(gulp.dest('public/lib/normalize/'))
+});
+
 
 // 组合任务
 gulp.task('default', ['script1','script2','css1','css2']);
