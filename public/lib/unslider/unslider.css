@@ -1,0 +1,138 @@
+
+.unslider {
+    overflow: auto;
+    margin: 0;
+    padding: 0
+}
+
+.unslider-wrap {
+    position: relative
+}
+
+.unslider-wrap.unslider-carousel li {
+    float: left
+}
+
+.unslider-vertical>ul {
+    height: 100%
+}
+
+.unslider-vertical li {
+    float: none;
+    width: 100%
+}
+
+.unslider-fade {
+    position: relative
+}
+
+.unslider-fade .unslider-wrap li {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    z-index: 8
+}
+
+.unslider-fade .unslider-wrap li.unslider-active {
+    z-index: 10
+}
+
+.unslider li,.unslider ol,.unslider ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border: none
+}
+
+.unslider-arrow {
+    position: absolute;
+    left: 20px;
+    z-index: 2;
+    cursor: pointer
+}
+
+.unslider-arrow.next {
+    left: auto;
+    right: 20px
+}
+
+
+
+
+.wrap {
+    width: 640px;
+    margin: 0 auto;
+}
+.demo {
+    padding: 30px 0;
+}
+
+.slider {
+    position: relative;
+    padding: 40px;
+    margin-bottom: 50px;
+    background: #fff;
+    color: #666;
+    text-align: center;
+    text-shadow: none;
+    border-radius: 6px;
+    box-shadow: 0 4px 6px rgba(0,0,0,.1);
+}
+.unslider-arrow {
+    display: block;
+    width: 32px;
+    height: 32px;
+    top: 50%;
+    right: -50px;
+    left: auto;
+    margin-top: -16px;
+    overflow: hidden;
+    background: rgba(0,0,0,.2) no-repeat 50% 50%;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAQCAQAAABuQZ3IAAAAi0lEQ…ke1P1ArgXwouVvdQq86ww/GQefusNf7kBviBlxpT8k+gL/Wox4r1d4MwAAAABJRU5ErkJggg==);
+    background-size: 7px 11px;
+    border-radius: 32px;
+    text-indent: -999em;
+    opacity: .6;
+    transition: opacity .2s;
+}
+
+.unslider-arrow.prev {
+    left: 20px;
+    right: auto;
+    -ms-transform: rotate(-180deg);
+    transform: rotate(-180deg);
+}
+
+
+
+.unslider-nav {
+    position: absolute;
+    bottom: -35px;
+    left: 0;
+    right: 0;
+    top: auto;
+    margin: 0;
+}
+
+
+.unslider-nav ol {
+    list-style: none;
+    text-align: center;
+}
+.unslider-nav ol li {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    margin: 0 4px;
+    background: black;
+    border-radius: 5px;
+    overflow: hidden;
+    text-indent: -999em;
+    border: 2px solid #66ff67;
+    cursor: pointer;
+}
+.unslider-nav ol li.unslider-active {
+    background: #e50000;
+    cursor: default;
+}
