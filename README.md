@@ -1,18 +1,26 @@
-# DearSW-Website
-
-* [demo](http://www.dearsw.top:8888/)
-
-* 采用MVC模式
-
-* gulp自动化
-
-* Node驱动
-
-* 使用阿里云服务器、七牛云存储
+# 结构设计
+* 结构图
+ ![图片](./public/imgs/resume/update1.png)
 
 
-# Show
 
-* ![图片2](./public/imgs/resume/dearsw2.png)
+# 网站展示
 
-* ![图片1](./public/imgs/resume/dearsw.png)
+* 启动
+ ![图片](./public/imgs/resume/update9.png)
+
+* 主页
+ ![图片](./public/imgs/resume/update2.png)
+ ![图片2](./public/imgs/resume/dearsw2.png)
+
+* 简历页
+ ![图片](./public/imgs/resume/update6.png)
+
+* 后台页
+ ![图片](./public/imgs/resume/update4.png)
+ ![图片](./public/imgs/resume/update5.png)
+ ![图片](./public/imgs/resume/update7.png)
+ ![图片](./public/imgs/resume/update8.png)
+ ![图片](./public/imgs/resume/update10.png)
+
+# 只愿君心似我心,定不负相思意
